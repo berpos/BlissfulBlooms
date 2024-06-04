@@ -1,8 +1,17 @@
-<% @recent.each do |location| %>
-  <%= location.name %>
-  <%= location.plants.count %>
-<% end %>
+<div class="background-top">
+  <div>
+    <%= image_tag('Logo.png', class: "logo") %>
+  </div>
+  <div>
+    <h2 class="headers"><%= current_user.garden_name %></h2>
+  </div>
+</div>
 
-<div class= "background-top">
-  <%= image_tag('Logo.png') %>
+<div class="recents-container">
+  <% @recent.each do |location| %>
+    <div class="recent-container">
+      <%= location.name %>
+      <%= location.plants.count %>
+    </div>
+  <% end %>
 </div>
