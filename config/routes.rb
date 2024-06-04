@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get "location/:id/plants", to: "plants#plantslocation"
 
+  get "homepage", to: "locations#recentlocations"
+
   resources :locations do
-    
+
   end
 end
