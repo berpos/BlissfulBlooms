@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :locations, dependent: :destroy
   has_many :plants, through: :locations
+
+  validates :username, uniqueness: true, presence: true
+  validates :garden_name, presence: true
 end
