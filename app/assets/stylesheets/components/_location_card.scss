@@ -1,0 +1,33 @@
+.location-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-info {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.card {
+  border: 2px solid black;
+  width: 85%;
+  padding: 1rem;
+  border-radius: 18px;
+  margin-top: 10px;
+}
+
+
+
+.image_location {
+  width: 5rem;
+  height: auto;
+}
+
+.location-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

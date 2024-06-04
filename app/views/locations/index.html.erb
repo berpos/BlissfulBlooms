@@ -1,0 +1,22 @@
+<div class="location-container">
+
+  <% @locations.each do |location| %>
+    <div class="card">
+
+      <div class="card-info">
+      <div>
+        <%= image_tag('add-picture.svg', class: "image_location") %>
+        </div>
+        <div class="location-text">
+          <h2 style="margin-bottom: 0px"><strong><%= location.name %></strong></h2>
+          <p style="margin-bottom: 0px"><%= "NUMBER OF PLANTS:" %> <%= location.plants.count %></p>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <p><%= link_to "plants",location_path(location), class: "btn mg-0" %></p>
+      </div>
+    </div>
+
+  <% end %>
+</div>

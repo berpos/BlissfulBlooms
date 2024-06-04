@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get "location/:id/plants", to: "plants#plantslocation"
 
   resources :locations do
-    
+  
   end
 end
