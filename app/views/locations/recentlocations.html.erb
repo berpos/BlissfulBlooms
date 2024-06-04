@@ -1,3 +1,8 @@
 <% @recent.each do |location| %>
   <%= location.name %>
+  <%= location.plants.count %>
 <% end %>
+
+<div class= "background-top">
+  <%= image_tag('Logo.png') %>
+</div>
