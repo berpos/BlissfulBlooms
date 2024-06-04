@@ -8,7 +8,7 @@ puts "Creating new seeds"
 
 10.times do
   Location.create!(
-    user_id: 2,
+    user_id: User.last.id,
     name: Faker::Name.first_name
   )
 end
