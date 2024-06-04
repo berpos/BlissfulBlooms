@@ -1,6 +1,7 @@
 <div class="background-top">
-  <div>
+  <div class="d-flex justify-content-between">
     <%= image_tag('Logo.png', class: "logo") %>
+    <%= image_tag('CatIcon.png', class: "cat") %>
   </div>
   <div>
     <h2 class="headers"><%= current_user.garden_name %></h2>
@@ -9,7 +10,7 @@
 
 <div class="recents-container">
   <% @recent.each do |location| %>
-    <div class="recent-container">
+    <div class="recent-container mx-auto">
       <%= location.name %>
       <%= location.plants.count %>
     </div>
