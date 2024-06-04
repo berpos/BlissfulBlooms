@@ -1,14 +1,35 @@
 .btn-primary-log{
   background-image: linear-gradient(#A8E063, #56AB2F);
   color: white;
-  width: 100%;
+  width: 60%;
+  left: 50%;
+  transform: translateX(35%);
   border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  transition: all 0.3s ease;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.btn-primary-log:hover{
+  background-color: #56AB2F;
+  color: #fff;
+}
+
+.btn-outline {
+  border: 2px solid #000;
+  border-color: #A8E063;
+  width: 60%;
+  left: 50%;
+  transform: translateX(35%);
+  color: #56AB2F;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   border-radius: 7px;
   transition: all 0.3s ease;
 }
 
-.btn-primary-log:hover{
-  background-color: #56AB2F;
+.btn-outline:hover {
+  background-color: #A8E063;
   color: #fff;
 }
