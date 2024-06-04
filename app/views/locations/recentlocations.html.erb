@@ -8,11 +8,16 @@
   </div>
 </div>
 
+
 <div class="recents-container">
   <% @recent.each do |location| %>
-    <div class="recent-container mx-auto">
-      <%= location.name %>
-      <%= location.plants.count %>
+    <div class="recent-container">
+      <div class="placeholder">
+      </div>
+      <div>
+        <%= location.name %>
+        <%= location.plants.count %>
+      </div>
     </div>
   <% end %>
 </div>

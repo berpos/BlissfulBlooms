@@ -18,6 +18,8 @@
   display: grid;
   flex-wrap: nowrap;
   overflow-x: scroll;
-  grid-template-columns: repeat(auto-fill, 150px);
-  grid-template-rows: 1fr;
+  grid-template-columns: 86%;
+  grid-auto-flow: column;
+  padding-bottom: 16px;
+  grid-gap: 8px;
 }
