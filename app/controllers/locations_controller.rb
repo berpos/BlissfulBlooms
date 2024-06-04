@@ -4,6 +4,10 @@ class LocationsController < ApplicationController
     @recent = Location.all.order("updated_at DESC").limit(4)
   end
 
+  def index
+    @locations = Location.all
+  end
+
   private
 
   def set_location

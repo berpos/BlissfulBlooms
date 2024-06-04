@@ -7,6 +7,5 @@ Rails.application.routes.draw do
   get "homepage", to: "locations#recentlocations"
 
   resources :locations do
-
   end
 end

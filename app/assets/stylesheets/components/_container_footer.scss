@@ -1,0 +1,23 @@
+.container-footer {
+
+  position: sticky;
+  bottom: 0;
+  margin-top: 16px;
+  padding-top: 16px;
+  background-color: white;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+i {
+  font-size: 28px;
+  color: #C6C6C6;
+}
+
+i:hover {
+  color: #A8E063;
+}
