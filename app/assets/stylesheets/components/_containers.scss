@@ -20,6 +20,10 @@
   grid-gap: 8px;
 }
 
+.recents-container::-webkit-scrollbar {
+  background: transparent;
+}
+
 .container-info{
   height: 100%;
 }
