@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   resources :locations do
   end
+
+  resources :plants do
+  end
 end
