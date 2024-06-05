@@ -47,3 +47,9 @@
   background-color: #A8E063;
   color: #fff;
 }
+
+.create_plant {
+  position: sticky;
+  top: calc(100% - 8rem);
+  z-index: 5;
+}

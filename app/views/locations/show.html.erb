@@ -1,12 +1,31 @@
-<p>hello</p>
 
-<div class="location-container">
-  <% @location.plants.each do |plant| %>
-    <div class="card-info p-3">
-      <p><strong><%= plant.name%></strong></p>
-      <p><strong>age<%=plant.age %></strong></p>
-      <p><strong>level<%= plant.level%></strong></p>
-    </div>
+<div class="background-top fixed-top">
+  <div class="d-flex justify-content-between">
+    <%= image_tag('Logo.png', class: "logo") %>
+    <%= image_tag('CatIcon.png', class: "cat") %>
   </div>
+  <div>
+    <h2 class="headers"><%= @location.name %></h2>
+  </div>
+</div>
+
+<div class ="create_plant d-flex justify-content-end">
+  <%= link_to image_tag('CatIcon.png', class: "cat grow"), locations_path %>
+</div>
+
+<div class="location-container" style="margin-top: 7rem; margin-bottom: 2.3rem;">
+  <% @location.plants.each do |plant| %>
+    <div class="card">
+      <div class="card-info">
+        <div>
+          <%= image_tag('add-picture.svg', class: "image_location") %>
+        </div>
+        <div class="location-text">
+          <h2 style="margin-bottom: 0px"><strong><%= plant.name%></strong></h2>
+          <p style="margin-bottom: 0px">age<%=plant.age %></p>
+          <p style="margin-bottom: 0px">level<%= plant.level%></p>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
