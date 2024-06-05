@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_action :set_location, only: %i[show  ]
 
   def recentlocations
     @recent = Location.all.order("updated_at DESC").limit(4)
@@ -9,8 +10,20 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @location = Location.find(params[:id])
-   # @plants = @location.plants
+  end
+
+  def new
+    @location = Location.new
+  end
+
+  def create
+    @location = Location.new(location_params)
+    @location.user_id = current_user.id
+    if @location.save
+      redirect_to locations_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
