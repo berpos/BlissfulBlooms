@@ -1,0 +1,28 @@
+<div class="background-top">
+  <div class="d-flex justify-content-between">
+    <%= image_tag('Logo.png', class: "logo") %>
+    <%= image_tag('CatIcon.png', class: "cat") %>
+  </div>
+  <div>
+    <h2 class="headers"><%= current_user.garden_name %></h2>
+  </div>
+</div>
+
+
+<div class="recents-container">
+  <% @recent.each do |location| %>
+    <div class="recent-container">
+      <div class="container-info">
+        <div class="placeholder">
+        </div>
+        <div style="margin-left: 1rem; margin-top: 0.5rem;">
+          <h4 class="location-name"><%= location.name %></h4>
+          <p><%= location.plants.count %> plants🪴<p>
+        </div>
+        <div class="text-center" style="margin-top: 3rem;">
+          <%= link_to "Go", location_path(location), class: "btn btn-normal" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
