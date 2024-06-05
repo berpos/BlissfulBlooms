@@ -10,10 +10,12 @@
 </div>
 
 <div class ="create_plant d-flex justify-content-end">
-  <%= link_to image_tag('CatIcon.png', class: "cat grow"), locations_path %>
+  <a data-toggle="modal" data-target="#exampleModalCenter">
+    <%= image_tag('CatIcon.png', class: "cat grow") %>
+  </a>
 </div>
 
-<div class="location-container" style="margin-top: 7rem; margin-bottom: 2.3rem;">
+<div class="location-container" style="margin-top: 7rem; margin-bottom: 4rem;">
   <% @location.plants.each do |plant| %>
     <div class="card">
       <div class="card-info">

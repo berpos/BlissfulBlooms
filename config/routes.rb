@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get "homepage", to: "locations#recentlocations"
 
   resources :locations do
+    resources :plants, only: %i[new create]
   end
 end
