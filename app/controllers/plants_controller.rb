@@ -1,7 +1,9 @@
 class PlantsController < ApplicationController
 
   def index
+    # last_update = time_ago_in_words(params[:updated_at])
     @plants = Plant.all
+    # @last_update = last_update.days_ago
   end
 
   private

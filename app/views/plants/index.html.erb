@@ -9,16 +9,17 @@
 </div>
 
 
-<div class="recents-container">
+<div class="location-container" style="margin-bottom: 4rem;">
   <% @plants.each do |plant| %>
-    <div class="recent-container">
-      <div class="container-info">
-        <div class="placeholder">
+    <div class="card">
+      <div class="card-info">
+        <div>
+          <%= image_tag('add-picture.svg', class: "image_location") %>
         </div>
-        <div style="margin-left: 1rem; margin-top: 0.5rem;">
-          <h4 class="location-name"><strong><%= plant.name %></strong> </h4>
-          <p><%= plant.state %><p>
-          <p>Last time taken care of: <%= plant.updated_at %><p>
+        <div class="location-text">
+          <h2 style="margin-bottom: 0px"><strong><%= plant.name%></strong></h2>
+          <p style="margin-bottom: 0px">State: <%=plant.state %></p>
+          <p style="margin-bottom: 0px">Last time taken care of: <%= plant.updated_at.to_formatted_s(:nice)%></p>
         </div>
       </div>
     </div>
