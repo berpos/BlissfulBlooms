@@ -1,0 +1,20 @@
+<div class="background-top" data-controller="messages">
+  <div class="d-flex justify-content-between">
+    <%= image_tag('Logo.png', class: "logo") %>
+    <%= image_tag('CatIcon.png', class: "cat") %>
+  </div>
+</div>
+
+<div class="user-container">
+  <div class="user-profile-card">
+    <div class="username-and-garden">
+      <h1><strong><%= @user.username %></strong></h1>
+      <h5> Garden name: <%= @user.garden_name  %></h5>
+    </div>
+    <div style= "margin-top: 5rem" class="plants-locations-n">
+    <p> number of plants: <%= @user.plants.count %></p>
+    <p> number of locations: <%= @user.locations.count %></p>
+    </div>
+  </div>
+
+</div>
