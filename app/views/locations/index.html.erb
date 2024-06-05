@@ -8,8 +8,11 @@
   </div>
 </div>
 
-<div class ="create_plant d-flex justify-content-end">
- <%= link_to image_tag('CatIcon.png', class: "cat grow"), new_location_path %>
+<!-- Button trigger modal -->
+<div class="create_plant d-flex justify-content-end">
+  <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <%= image_tag('CatIcon.png', class: "cat grow") %>
+  </a>
 </div>
 
 <div class="location-container" style="margin-top: 7rem; margin-bottom: 4rem;">
