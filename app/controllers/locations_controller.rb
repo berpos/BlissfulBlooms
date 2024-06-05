@@ -9,6 +9,9 @@ class LocationsController < ApplicationController
     @locations = Location.all
   end
 
+  def show
+  end
+
   def new
     @location = Location.new
   end
