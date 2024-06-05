@@ -1,0 +1,10 @@
+ <div class="">
+    <%= simple_form_for @location do |f| %>
+      <%= f.input :name %>
+
+      <div class="form-actions">
+        <%= f.submit "Create!", class: "" %>
+        <%= link_to "Cancel", locations_path, class: "" %>
+      </div>
+    <% end %>
+</div>
