@@ -8,6 +8,11 @@ class LocationsController < ApplicationController
     @locations = Location.all
   end
 
+  def show
+    @location = Location.find(params[:id])
+   # @plants = @location.plants
+  end
+
   private
 
   def set_location
