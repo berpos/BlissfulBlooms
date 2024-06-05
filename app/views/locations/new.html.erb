@@ -1,0 +1,18 @@
+<div class="background-top" data-controller="messages">
+  <div class="d-flex justify-content-between">
+    <%= image_tag('Logo.png', class: "logo") %>
+    <%= image_tag('CatIcon.png', class: "cat") %>
+  </div>
+  <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
+    <div>
+      <p style="font-size: 12px;" class="mx-2">
+      Here you can see your chosen top 4 locations,
+      blah blah blah placeholder
+      </p>
+    </div>
+  </div>
+    <h2 class="headers"><%= current_user.garden_name %></h2>
+</div>
+
+
+<%= render "form_location" %>

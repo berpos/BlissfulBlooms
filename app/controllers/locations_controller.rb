@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: %i[show new]
+  before_action :set_location, only: %i[show create]
 
   def recentlocations
     @recent = Location.all.order("updated_at DESC").limit(4)
@@ -20,7 +20,7 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     @location.user_id = current_user.id
     if @location.save
-      redirect_to location_path(@location)
+      redirect_to locations_path
     else
       render :new, status: :unprocessable_entity
     end
