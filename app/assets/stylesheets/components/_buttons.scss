@@ -1,3 +1,49 @@
+.btn-normal {
+  background: rgb(86,171,47);
+  background: linear-gradient(0deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
+  background-color: linear;
+  border-radius: 29px;
+  color: #fff;
+  width: 40%;
+  box-shadow: 4px 4px 8px #56ab2f25;
+}
+
 .btn {
   text-decoration: none;
+}
+
+.btn-primary-log{
+  background-image: linear-gradient(#A8E063, #56AB2F);
+  color: white;
+  width: 60%;
+  left: 50%;
+  transform: translateX(35%);
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  transition: all 0.3s ease;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.btn-primary-log:hover{
+  background-color: #56AB2F;
+  color: #fff;
+}
+
+.btn-outline {
+  border: 2px solid #000;
+  border-color: #A8E063;
+  width: 60%;
+  left: 50%;
+  transform: translateX(35%);
+  color: #56AB2F;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #A8E063;
+  color: #fff;
 }
