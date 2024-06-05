@@ -1,0 +1,26 @@
+<div class="background-top">
+  <div class="d-flex justify-content-between">
+    <%= image_tag('Logo.png', class: "logo") %>
+    <%= image_tag('CatIcon.png', class: "cat") %>
+  </div>
+  <div>
+    <h2 class="headers"><%= current_user.garden_name %></h2>
+  </div>
+</div>
+
+
+<div class="recents-container">
+  <% @plants.each do |plant| %>
+    <div class="recent-container">
+      <div class="container-info">
+        <div class="placeholder">
+        </div>
+        <div style="margin-left: 1rem; margin-top: 0.5rem;">
+          <h4 class="location-name"><strong><%= plant.name %></strong> </h4>
+          <p><%= plant.state %><p>
+          <p>Last time taken care of: <%= plant.updated_at %><p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

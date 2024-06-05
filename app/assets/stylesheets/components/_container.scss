@@ -45,3 +45,13 @@
   justify-content: center;
   height: 80px;
 }
+
+.recents-container {
+  display: inline;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  grid-auto-flow: column;
+  padding-bottom: 16px;
+  grid-gap: 8px;
+  margin: 0 10px;
+}
