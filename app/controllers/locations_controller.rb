@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: %i[show  ]
+  before_action :set_location, only: %i[show]
 
   def recentlocations
     @recent = Location.all.order("updated_at DESC").limit(4)
