@@ -6,16 +6,6 @@ class PlantsController < ApplicationController
     # @last_update = last_update.days_ago
   end
 
-  private
-
-  def set_plant
-    @plant = Plant.find(params[:id])
-  end
-
-  def plant_params
-    params.require(:plant).permit(:name, :state, :updated_at)
-  end
-
   def new
     @plant = Plant.new
   end
@@ -36,7 +26,11 @@ class PlantsController < ApplicationController
     @location = Location.find(params[:location_id])
   end
 
+  def set_plant
+    @plant = Plant.find(params[:id])
+  end
+
   def plant_params
-    params.require(:plant).permit(:name)
+    params.require(:plant).permit(:name, :state, :updated_at)
   end
 end
