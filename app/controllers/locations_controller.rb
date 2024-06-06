@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+
   before_action :set_location, only: %i[show ]
 
   def recentlocations
@@ -10,6 +11,8 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @location = Location.find(params[:id])
+    @plant = Plant.new
   end
 
   def new

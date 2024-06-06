@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "profile", to: "users#profile"
 
   resources :locations do
+    resources :plants, only: %i[new create]
   end
 
   resources :plants do
