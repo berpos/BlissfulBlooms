@@ -21,9 +21,30 @@
           <%= image_tag('add-picture.svg', class: "image_location") %>
         </div>
         <div class="location-text">
-          <h2 style="margin-bottom: 0px"><strong><%= plant.name%></strong></h2>
-          <p style="margin-bottom: 0px">age<%=plant.age %></p>
-          <p style="margin-bottom: 0px">level<%= plant.level%></p>
+          <h2 style="margin-bottom: 0px"><strong><%= plant.name.capitalize%></strong></h2>
+          <p style="margin-bottom: 0px">
+          <% time = Time.new %>
+          <% days_difference = (time.to_date - plant.created_at.to_date).to_i %>
+          <% remaining_days = days_difference % 365 %>
+          <% days = remaining_days % 30 %>
+          <% months = remaining_days / 30 %>
+          <% years = days_difference / 365 %>
+          <% if years > 0 %>
+            <%= "#{years} years old!" %>
+          <% elsif months > 0 %>
+            <%= "#{months} months old!" %>
+          <% else %>
+            <%= "#{days} days old!" %>
+          <% end %>
+          </p>
+          <div class="level-container text-center"><p style="margin-bottom: 0px">
+          <% if plant.level == 0 %>
+            Lvl.0
+          <% else %>
+            <%= "Lvl.#{plant.level}" %>
+          <% end %>
+          </p>
+          </div>
         </div>
       </div>
     </div>
