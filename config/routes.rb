@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :plants do
+    resources :logs, only: %i[new create]
   end
 end

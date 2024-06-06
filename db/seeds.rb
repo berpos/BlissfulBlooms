@@ -24,4 +24,13 @@ end
     categories: %i[person moment].sample
   )
 end
+
+10.times do
+  Log.create!(
+    plant_id: Plant.last.id,
+    categories: %i[water trim soil],
+    content: "This is purely a test, don't mind this"
+  )
+end
+
 puts 'New databse created'
