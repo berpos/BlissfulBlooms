@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "location/:id/plants", to: "plants#plantslocation"
   get "homepage", to: "locations#recentlocations"
   get "profile", to: "users#profile"
+  get "location/:id/edit", to: "logs#edit", as: :edit
+  patch "location/:id", to: "logs#update"
 
   resources :locations do
   end
