@@ -18,7 +18,10 @@ end
     location_id: Location.last.id,
     name: Faker::Name.first_name,
     state: %i[Very bad bad good very good].sample,
-    updated_at: "today"
+    updated_at: "today",
+    age: rand(0...3),
+    level: rand(0...4),
+    categories: %i[person moment].sample
   )
 end
 puts 'New databse created'

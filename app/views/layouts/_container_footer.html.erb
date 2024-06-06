@@ -1,28 +1,28 @@
-<div class="container-footer fixed-bottom">
+<div class="container-footer fixed-bottom" data-controller="color-button">
   <ul>
     <li>
       <%= link_to homepage_path do %>
-        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-house <%= request.fullpath === '/homepage' ? "active" : "" %>"></i>
       <% end %>
     </li>
     <li>
-      <%= link_to root_path do %>
-        <i class="fa-solid fa-seedling"></i>
+      <%= link_to plants_path do %>
+        <i class="fa-solid fa-seedling <%= request.fullpath === '/plants' ? "active" : "" %>"></i>
       <% end %>
     </li>
     <li>
       <%= link_to locations_path do %>
-        <i class="fa-solid fa-map"></i>
+        <i class="fa-solid fa-map <%= request.fullpath === '/locations' ? "active" : "" %>"></i>
       <% end %>
     </li>
     <li>
       <%= link_to root_path do %>
-        <i class="fa-solid fa-book"></i>
+        <i class="fa-solid fa-book <%= request.fullpath === '/logs' ? "active" : "" %>"></i>
       <% end %>
     </li>
     <li>
       <%= link_to profile_path do %>
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user <%= request.fullpath === '/profile' ? "active" : "" %>"></i>
       <% end %>
     </li>
   </ul>
