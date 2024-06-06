@@ -87,9 +87,7 @@
   width: 6.5rem;
   margin-top: 0.5rem;
 }
-// .carousel-button:focus {
-//   background-color: #56ab2f;
-// }
+
 .arrow-btn {
   background-color: gray;
   height: 35px;
@@ -100,9 +98,6 @@
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
-// .arrow-btn:focus {
-//   background-color: #7bd451e0;
-// }
 
 .carousel-button {
   box-sizing: content-box;
@@ -122,37 +117,10 @@
   opacity: .5;
   transition: opacity .6s ease;
   border-radius: 100%;
-
-  // width: 3px;
-  // height: 8px;
-  // border-radius: 100%;
-  // text-decoration: none;
-  // border: none;
-
-  // display: inline-block;
-  // background: #de2323;
-  // overflow: hidden;
-  // text-indent: -999px;
-  // border-radius: 100%;
-  // width: 20px;
-  // height: 20px;
-  // box-shadow: inset 0 1px 1px 0 #999;
-
-
 }
-// nav.carousel-button input[type=radio] {
-//   display: none;
-// }
 
-//  nav.carousel-button:hover {
-//   cursor: default;
-// }
-// nav.carousel-button label:hover {
-//   background: #bbb;
-//   cursor: pointer;
-//   box-shadow: inset 0 1px 1px 0 #777;
-// }
-// nav.carousel-button input:checked + label {
-//   background: linear-gradient(#FFFFFF, #bc1414);
-//   box-shadow: inset 0 0 1px 1px #FFFFFF;
-// }
+.active{
+  color: #A8E063;
+  // transform: translateY(4px);
+}
+

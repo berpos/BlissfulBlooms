@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "logs", to: "logs#show"
 
   resources :locations do
+    resources :plants, only: %i[new create]
   end
 
   resources :plants do

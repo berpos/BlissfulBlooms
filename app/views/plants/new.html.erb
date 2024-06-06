@@ -1,0 +1,26 @@
+<div class="background-top" data-controller="messages">
+  <div class="d-flex justify-content-between">
+    <%= image_tag('Logo.png', class: "logo") %>
+    <%= image_tag('CatIcon.png', class: "cat") %>
+  </div>
+  <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
+    <div>
+      <p style="font-size: 12px;" class="mx-2">
+        Chose your plant!
+      </p>
+    </div>
+  </div>
+    <h2 class="headers"><%= @plant.location %></h2>
+</div>
+
+<div class="new-plant-container position-absolute top-0 end-50" ><%#TODO: change class name%>
+  <div class="form-creation-plant">
+    <%= simple_form_for [@location, @plant] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :categories, collection: [['Person', 'person'], ['Moment', 'moment']] %>
+      <%= f.submit "Create", class: "btn btn-primary-log" %>
+    <% end %>
+  </div>
+  <div class="form-creation-plant">
+  </div>
+</div>
