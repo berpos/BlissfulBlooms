@@ -73,7 +73,54 @@
   border: none;
 }
 
+.btn-normal-logs {
+  background: rgb(86,171,47);
+  background: linear-gradient(0deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
+  background-color: linear;
+  border-radius: 29px;
+  color: #fff;
+  padding-left: 2rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  box-shadow: 4px 4px 8px #56ab2f25;
+  text-decoration: none;
+  width: 6.5rem;
+  margin-top: 0.5rem;
+}
+
+.arrow-btn {
+  background-color: gray;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin-top: 11rem;
+  font-size: 30px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.carousel-button {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 10px; /* change width */
+  height: 10px; /* change height */
+  padding: 0;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #cb0606;
+  background-clip: padding-box;
+  border: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: .5;
+  transition: opacity .6s ease;
+  border-radius: 100%;
+}
+
 .active{
   color: #A8E063;
   // transform: translateY(4px);
 }
+

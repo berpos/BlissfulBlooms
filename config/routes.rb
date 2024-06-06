@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "location/:id/plants", to: "plants#plantslocation"
   get "homepage", to: "locations#recentlocations"
   get "profile", to: "users#profile"
+  get "logs", to: "logs#show"
 
   resources :locations do
     resources :plants, only: %i[new create]

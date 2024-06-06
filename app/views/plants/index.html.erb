@@ -20,6 +20,7 @@
           <h2 style="margin-bottom: 0px"><strong><%= plant.name.capitalize%></strong></h2>
           <p style="margin-bottom: 0px">State: <%=plant.state %></p>
           <p style="margin-bottom: 0px">Last update: <%= TimeDifference.between(Time.now, plant.updated_at).humanize %></p>
+          <%= link_to "Logs", logs_path, class: "btn-normal-logs"%>
         </div>
       </div>
     </div>
