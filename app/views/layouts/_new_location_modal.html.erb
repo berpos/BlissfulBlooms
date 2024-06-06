@@ -8,11 +8,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-          <%= f.input :name %>
+          <%= f.input :name, input_html: {value: "", style: "border: 3px solid #A8E063"} %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="mybtn3" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="mybtn3">Save changes</button>
+        <button type="button" class="btn-primary-mod" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn-primary-mod">Create</button>
       </div>
     </div>
     <% end %>
