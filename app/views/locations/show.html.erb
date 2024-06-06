@@ -21,7 +21,7 @@
           <%= image_tag('add-picture.svg', class: "image_location") %>
         </div>
         <div class="location-text">
-          <h2 style="margin-bottom: 0px"><strong><%= plant.name%></strong></h2>
+          <h2 style="margin-bottom: 0px"><strong><%= plant.name.capitalize%></strong></h2>
           <p style="margin-bottom: 0px">
           <% time = Time.new %>
           <% days_difference = (time.to_date - plant.created_at.to_date).to_i %>
