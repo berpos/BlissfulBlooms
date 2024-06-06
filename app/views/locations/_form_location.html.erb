@@ -1,0 +1,10 @@
+<div class="location-form-container d-flex justify-content-center mx-auto">
+  <div>
+    <%= simple_form_for @location do |f| %>
+      <%= f.input :name %>
+
+      <%= f.submit "Create!", class: "btn-normal-submit" %>
+      <%= link_to "Cancel", locations_path, class: "btn btn-outline btn-md" %>
+    <% end %>
+  </div>
+</div>

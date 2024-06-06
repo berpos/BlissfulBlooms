@@ -54,6 +54,21 @@
 
 .create_plant {
   position: sticky;
-  top: calc(100% - 8rem);
+  top: calc(100% - 9rem);
   z-index: 5;
+}
+
+.btn-normal-submit {
+  background: rgb(86,171,47);
+  background: linear-gradient(0deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
+  background-color: linear;
+  border-radius: 8px;
+  color: #fff;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  box-shadow: 4px 4px 8px #56ab2f25;
+  text-decoration: none;
+  border: none;
 }
