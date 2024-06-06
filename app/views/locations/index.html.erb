@@ -4,7 +4,7 @@
     <%= image_tag('CatIcon.png', class: "cat") %>
   </div>
   <div>
-    <h2 class="headers"><%= current_user.garden_name %></h2>
+    <h2 class="headers"><%= current_user.garden_name.capitalize %></h2>
   </div>
 </div>
 
@@ -23,7 +23,7 @@
         <%= image_tag('add-picture.svg', class: "image_location") %>
         </div>
         <div class="location-text">
-          <h2 style="margin-bottom: 0px"><strong><%= location.name %></strong></h2>
+          <h2 style="margin-bottom: 0px"><strong><%= location.name.capitalize %></strong></h2>
           <p style="margin-bottom: 0px"> plants🪴: <%= location.plants.count %></p>
           <p class="pt-3"><%= link_to "Go",location_path(location), class: "btn-normal" %></p>
         </div>
