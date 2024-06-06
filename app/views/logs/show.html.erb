@@ -1,0 +1,49 @@
+<div class="background-top ">
+  <div class="d-flex justify-content-between">
+    <%= image_tag('Logo.png', class: "logo") %>
+    <%= image_tag('CatIcon.png', class: "cat") %>
+  </div>
+  <div>
+    <h2 class="headers"><%= "BookLogs" %></h2>
+  </div>
+</div>
+
+<div class="container-carousel">
+
+  <div class="carousel-card position-absolute top-0 end-50">
+    <div class="card-info" style="gap: 1rem">
+      <%= link_to plants_path do %>
+        <i class="fa-solid fa-chevron-left"></i>
+      <% end %>
+      <h2 style="text-align: center;"> 🪴 Plant Name 🪴</h2>
+    </div>
+
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner d-flex justify-content-center">
+        <div class="carousel-container ">
+          <div class="carousel-item active">
+            <%= image_tag('potted-plant.webp', class: "carousel-img") %>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag('plant.png', class: "carousel-img") %>
+          </div>
+        </div>
+      </div>
+
+
+      <button class="carousel-button active" type="button" style="margin-left: 8rem; margin-top: 5rem" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+      <button class="carousel-button" type="button" style="margin-left: rem; margin-top: 5rem" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      
+      <button class="arrow-btn carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="fa-solid fa-angle-left" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="arrow-btn carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="fa-solid fa-angle-right" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div>
+  </div>
+</div>

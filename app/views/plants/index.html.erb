@@ -20,6 +20,7 @@
           <h2 style="margin-bottom: 0px"><strong><%= plant.name%></strong></h2>
           <p style="margin-bottom: 0px">State: <%=plant.state %></p>
           <p style="margin-bottom: 0px">Last time taken care of: <%= plant.updated_at.to_formatted_s(:nice)%></p>
+          <%= link_to "Logs", logs_path, class: "btn-normal-logs"%>
         </div>
       </div>
     </div>
