@@ -19,8 +19,8 @@
         <div class="location-text">
           <h2 style="margin-bottom: 0px"><strong><%= plant.name.capitalize%></strong></h2>
           <p style="margin-bottom: 0px">State: <%=plant.state %></p>
-          <p style="margin-bottom: 0px">Last update: <%= TimeDifference.between(Time.now, plant.updated_at).humanize %></p>
-          <%= link_to "Logs", logs_path, class: "btn-normal-logs"%>
+          <p style="margin-bottom: 0px">Last updated: <%= TimeDifference.between(Time.now, plant.updated_at).in_days.floor() %> days ago</p>
+          <p class="pt-3"><%= link_to "Logs", logs_path, class: "btn-normal"%></p>
         </div>
       </div>
     </div>
