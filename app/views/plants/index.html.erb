@@ -3,6 +3,20 @@
     <%= image_tag('Logo.png', class: "logo") %>
     <%= image_tag('CatIcon.png', class: "cat") %>
   </div>
+  <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
+    <div>
+      <p style="font-size: 12px;" class="mx-2 headerp">
+      <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
+      <strong><%= current_user.username.capitalize %></strong>, please make sure to take care of
+      <% status = Plant.where(state: %i[dehydrated messy degradated dying...]) %>
+      <% if status.any? %>
+        <% status.each do |plant| %>
+          <strong><%= "#{plant.name}🪴, " %></strong>
+        <% end %>
+      <% end %>
+      </p>
+    </div>
+  </div>
   <div>
     <h2 class="headers"><%= current_user.garden_name.capitalize %></h2>
   </div>
@@ -14,13 +28,13 @@
     <div class="card">
       <div class="card-info">
         <div>
-          <%= image_tag('add-picture.svg', class: "image_location") %>
+          <%= image_tag('potted-plant.webp', class: "image_location mt-3") %>
         </div>
         <div class="location-text">
           <h2 style="margin-bottom: 0px"><strong><%= plant.name.capitalize%></strong></h2>
           <p style="margin-bottom: 0px">State: <%=plant.state %></p>
-          <p style="margin-bottom: 0px">Last update: <%= TimeDifference.between(Time.now, plant.updated_at).humanize %></p>
-          <%= link_to "Logs", logs_path, class: "btn-normal-logs"%>
+          <p style="margin-bottom: 0px">Last updated: <%= TimeDifference.between(Time.now, plant.updated_at).in_days.floor() %> days ago</p>
+          <p class="pt-3"><%= link_to "Logs", logs_path, class: "btn-normal"%></p>
         </div>
       </div>
     </div>

@@ -3,6 +3,14 @@
     <%= image_tag('Logo.png', class: "logo") %>
     <%= image_tag('CatIcon.png', class: "cat") %>
   </div>
+  <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
+    <div>
+      <p style="font-size: 12px;" class="mx-2 headerp">
+      <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
+      You can find all your locations here! MEOW!
+      </p>
+    </div>
+  </div>
   <div>
     <h2 class="headers"><%= current_user.garden_name.capitalize %></h2>
   </div>
@@ -11,11 +19,11 @@
 <!-- Button trigger modal -->
 <div class="create_plant d-flex justify-content-end">
   <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <%= image_tag('CatIcon.png', class: "cat grow") %>
+    <%= image_tag('AddButton.png', class: "create-cat grow") %>
   </a>
 </div>
 
-<div class="location-container" style="margin-top: 7rem; margin-bottom: 4rem;">
+<div class="location-container" style="margin-top: 5rem; margin-bottom: 4rem;">
   <% @locations.each do |location| %>
     <div class="card">
       <div class="card-info">

@@ -5,9 +5,14 @@
   </div>
   <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
     <div>
-      <p style="font-size: 12px;" class="mx-2">
-      Here you can see your chosen top 4 locations,
-      blah blah blah placeholder
+      <p style="font-size: 12px;" class="mx-2 headerp">
+      <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
+      Welcome back <strong><%= current_user.username.capitalize %></strong> please make sure to take care of
+      <% if @status.any?  %>
+        <% @status.each do |plant| %>
+          <strong><%= "#{plant.name}🪴 at #{plant.location.name}, " %></strong>
+        <% end %>
+      <% end %>
       </p>
     </div>
   </div>
