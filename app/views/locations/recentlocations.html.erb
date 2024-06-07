@@ -5,8 +5,13 @@
   </div>
   <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
     <div>
-      <p style="font-size: 12px;" class="mx-2">
-      Here you can see your most crowded locations. Please make sure to take care of.
+      <p style="font-size: 12px;" class="mx-2 headerp">
+      Welcome back <%= current_user.username.capitalize %> please make sure to take care of
+      <% if @status.any?  %>
+        <% @status.each do |plant| %>
+          <%= "#{plant.name}🪴 at #{plant.location.name}, " %>
+        <% end %>
+      <% end %>
       </p>
     </div>
   </div>

@@ -3,6 +3,7 @@ class LocationsController < ApplicationController
   before_action :set_location, only: %i[show ]
 
   def recentlocations
+    @status = Plant.where(state: %i[dehydrated messy degradated dying...])
     @recent = Location.joins(:plants)
                       .group('locations.id')
                       .order('COUNT(plants.id) DESC')
