@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :plants, only: %i[new create]
   end
 
-  resources :plants do
+  resources :plants, except: %i[new create]  do
     resources :logs, only: %i[new create]
   end
 end

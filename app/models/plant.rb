@@ -4,4 +4,5 @@ class Plant < ApplicationRecord
 
   validates :categories, inclusion: { in: ['person', 'moment'] }
   validates :name, :categories, presence: true
+  accepts_nested_attributes_for :logs
 end
