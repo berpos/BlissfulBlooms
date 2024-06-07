@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   get "profile", to: "users#profile"
   get "location/:id/edit", to: "logs#edit", as: :edit
   patch "location/:id", to: "logs#update"
+  get "logs", to: "logs#show"
 
   resources :locations do
+    resources :plants, only: %i[new create]
   end
 
   resources :plants do

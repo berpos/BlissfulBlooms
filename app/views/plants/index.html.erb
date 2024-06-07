@@ -1,4 +1,4 @@
-<div class="background-top">
+<div class="background-top fixed-top">
   <div class="d-flex justify-content-between">
     <%= image_tag('Logo.png', class: "logo") %>
     <%= image_tag('CatIcon.png', class: "cat") %>
@@ -19,7 +19,8 @@
         <div class="location-text">
           <h2 style="margin-bottom: 0px"><strong><%= plant.name.capitalize%></strong></h2>
           <p style="margin-bottom: 0px">State: <%=plant.state %></p>
-          <p style="margin-bottom: 0px">Last time taken care of: <%= plant.updated_at.to_formatted_s(:nice)%></p>
+          <p style="margin-bottom: 0px">Last update: <%= TimeDifference.between(Time.now, plant.updated_at).humanize %></p>
+          <%= link_to "Logs", logs_path, class: "btn-normal-logs"%>
         </div>
       </div>
     </div>
