@@ -1,7 +1,6 @@
 class LogsController < ApplicationController
   before_action :set_logs, only: %i[new create]
-  def edit
-  end
+
   def new
     @log = Log.new
   end

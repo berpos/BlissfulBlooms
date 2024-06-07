@@ -141,7 +141,7 @@
 .carousel-img {
   width: 220px;
   height: 250px;
-  margin-top: 1rem;
+  margin-top: 3.5rem;
   border: 1px solid #DBE7E3;
   box-shadow: 4px 4px 8px #56ab2f25;
   border-radius: 20px;
@@ -174,4 +174,13 @@
   margin-top: 1rem;
   color: #57AC30;
   width: 4rem;
+}
+
+.message-container-log {
+  background-color: #fff;
+  border: 1px solid #DBE7E3;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  width: 90%;
+  margin-right: 2rem;
 }
