@@ -1,5 +1,5 @@
 class Log < ApplicationRecord
   belongs_to :plant
 
-  validates :logs, presence: true
+  validates :content, presence: true
 end

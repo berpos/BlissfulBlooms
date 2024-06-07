@@ -3,7 +3,10 @@ class LocationsController < ApplicationController
   before_action :set_location, only: %i[show ]
 
   def recentlocations
-    @recent = Location.all.order("updated_at DESC").limit(4)
+    @recent = Location.joins(:plants)
+                      .group('locations.id')
+                      .order('COUNT(plants.id) DESC')
+                      .limit(4)
   end
 
   def index
