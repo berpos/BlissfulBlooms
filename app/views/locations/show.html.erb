@@ -10,7 +10,7 @@
 </div>
 
   <div type="button" class ="create_plant d-flex justify-content-end">
-      <%= link_to image_tag('CatIcon.png', class: "cat grow"), new_location_plant_path(@location)%>
+      <%= link_to image_tag('AddButton.png', class: "create-cat grow"), new_location_plant_path(@location)%>
   </div>
 
 <div class="location-container" style="margin-top: 7rem; margin-bottom: 4rem;">
@@ -37,6 +37,7 @@
             <%= "#{days} days old!" %>
           <% end %>
           </p>
+          <p><%= plant.state.capitalize %></p>
           <div class="level-container text-center"><p style="margin-bottom: 0px">
           <% if plant.level == 0 %>
             Lvl.0
