@@ -15,9 +15,7 @@
 
 <div class="new-plant-container position-absolute top-0 end-50" ><%#TODO: change class name%>
   <div class="form-creation-plant">
-    <%= simple_form_for [@location, @plant] do |f| %>
-      <%= f.input :name %>
-      <%= f.input :categories, collection: [['Person', 'person'], ['Moment', 'moment']] %>
+    <%= simple_form_for [@plant, @log] do |f| %>
       <%= f.simple_fields_for @log do |m| %>
         <%= m.input :content %>
       <% end %>
