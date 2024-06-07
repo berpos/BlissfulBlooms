@@ -124,3 +124,17 @@
   // transform: translateY(4px);
 }
 
+.btn-normal-submit-drop {
+  background: rgb(86,171,47);
+  background: linear-gradient(0deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
+  background-color: linear;
+  border-radius: 4px;
+  color: #fff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  box-shadow: 4px 4px 8px #56ab2f25;
+  text-decoration: none;
+  border: none;
+}

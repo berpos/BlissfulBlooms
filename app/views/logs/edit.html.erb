@@ -1,4 +1,4 @@
-<div class="background-top fixed-top">
+<div class="background-top">
   <div class="d-flex justify-content-between">
     <%= image_tag('Logo.png', class: "logo") %>
     <%= image_tag('CatIcon.png', class: "cat") %>
@@ -8,3 +8,43 @@
   </div>
 </div>
 
+<div class="container-carousel">
+
+  <div class="carousel-card position-absolute top-0 end-50">
+    <div class="card-info" style="gap: 1rem">
+      <%= link_to plants_path do %>
+        <i class="fa-solid fa-chevron-left"></i>
+      <% end %>
+      <h2 style="text-align: center;"> 🪴 Plant Name 🪴</h2>
+    </div>
+
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner d-flex justify-content-center">
+        <div class="carousel-container ">
+          <div class="carousel-item active">
+            <%= image_tag('potted-plant.webp', class: "carousel-img") %>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown-wrapper">
+        <div class="dropdown-box">
+          <div class="card-info-drop mt-2">
+            <label for="exampleFormControlFile1", style="text-align: center">What's your action?</label>
+          </div>
+          <select class="form-control form-control-sm mt-1" >
+            <option>Water 💦</option>
+            <option>Trim ✂️</option>
+            <option>Soil 🌱</option>
+          </select>
+          <div class="card-info-drop mt-2">
+            <button type="submit" class="btn-normal-submit-drop">Go</button>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
