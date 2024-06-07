@@ -6,13 +6,15 @@ class PlantsController < ApplicationController
 
   def new
     @plant = Plant.new
+    @log = Log.new
   end
 
   def create
     @plant = Plant.new(plant_params)
     @plant.location = @location
+    
     if @plant.save
-      redirect_to location_path(@location)
+      create_log
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,6 +31,21 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:name, :categories)
+    params.require(:plant).permit(:name, :categories, logs_attributes: [:content])
+  end
+
+  def log_params
+    params.require(:plant).permit(log_attributes: [:content])
+  end
+
+  def create_log
+    @log = Log.new(content: params["plant"]["log"]["content"])
+    @log.plant = @plant
+
+    if @log.save
+      redirect_to location_path(@location)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 end
