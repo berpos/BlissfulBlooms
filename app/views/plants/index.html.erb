@@ -7,11 +7,11 @@
     <div>
       <p style="font-size: 12px;" class="mx-2 headerp">
       <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
-      <%= current_user.username.capitalize %>, please make sure to take care of
+      <strong><%= current_user.username.capitalize %></strong>, please make sure to take care of
       <% status = Plant.where(state: %i[dehydrated messy degradated dying...]) %>
       <% if status.any? %>
         <% status.each do |plant| %>
-          <%= "#{plant.name}🪴, " %>
+          <strong><%= "#{plant.name}🪴, " %></strong>
         <% end %>
       <% end %>
       </p>

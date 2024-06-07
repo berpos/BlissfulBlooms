@@ -3,6 +3,14 @@
     <%= image_tag('Logo.png', class: "logo") %>
     <%= image_tag('CatIcon.png', class: "cat") %>
   </div>
+  <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
+    <div>
+      <p style="font-size: 12px;" class="mx-2 headerp">
+      <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
+      You can find all your locations here! MEOW!
+      </p>
+    </div>
+  </div>
   <div>
     <h2 class="headers"><%= current_user.garden_name.capitalize %></h2>
   </div>

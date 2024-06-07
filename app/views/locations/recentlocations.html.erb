@@ -7,10 +7,10 @@
     <div>
       <p style="font-size: 12px;" class="mx-2 headerp">
       <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
-      Welcome back <%= current_user.username.capitalize %> please make sure to take care of
+      Welcome back <strong><%= current_user.username.capitalize %></strong> please make sure to take care of
       <% if @status.any?  %>
         <% @status.each do |plant| %>
-          <%= "#{plant.name}🪴 at #{plant.location.name}, " %>
+          <strong><%= "#{plant.name}🪴 at #{plant.location.name}, " %></strong>
         <% end %>
       <% end %>
       </p>
