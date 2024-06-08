@@ -26,7 +26,7 @@
   <% @recent.each do |location| %>
     <div class="recent-container">
       <div class="container-info">
-        <div class="placeholder">
+        <div class="placeholder" style="background-image: url('<%= cl_image_path location.photo.key, height: 300, gravity: "auto", crop: :fill %>'); opacity: 1">
         </div>
         <div style="margin-left: 1rem; margin-top: 0.5rem;">
           <h4 class="location-name"><%= location.name.capitalize %></h4>

@@ -17,7 +17,7 @@
 </div>
 
 <!-- Button trigger modal -->
-<div class="create_plant d-flex justify-content-end">
+<div class="create_plant d-flex justify-content-end mt-5">
   <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <%= image_tag('AddButton.png', class: "create-cat grow") %>
   </a>
@@ -28,7 +28,7 @@
     <div class="card">
       <div class="card-info">
       <div>
-        <%= image_tag('add-picture.svg', class: "image_location") %>
+        <%= cl_image_tag location.photo.key, height: 300, width: 400, crop: :fill , class: "image_location" %>
         </div>
         <div class="location-text">
           <h2 style="margin-bottom: 0px"><strong><%= location.name.capitalize %></strong></h2>

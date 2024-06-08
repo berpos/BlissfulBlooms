@@ -40,6 +40,6 @@ class LocationsController < ApplicationController
   end
 
   def location_params
-    params.require(:location).permit(:name, :updated_at)
+    params.require(:location).permit(:name, :updated_at, :photo)
   end
 end
