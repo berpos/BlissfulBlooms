@@ -7,7 +7,7 @@
     <div>
       <p style="font-size: 12px;" class="mx-2 headerp">
       <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
-      You can find all your locations here! MEOW!
+      You can find all your locations here! Or if you would like you can create a new one ! <strong>MEOW :3 </strong>
       </p>
     </div>
   </div>
@@ -17,19 +17,25 @@
 </div>
 
 <!-- Button trigger modal -->
-<div class="create_plant d-flex justify-content-end">
+<div class="create_plant d-flex justify-content-end mt-5">
   <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <%= image_tag('AddButton.png', class: "create-cat grow") %>
   </a>
 </div>
 
-<div class="location-container" style="margin-top: 5rem; margin-bottom: 4rem;">
+<div class="location-container" style="margin-top: 1.5rem; margin-bottom: 4rem;">
   <% @locations.each do |location| %>
     <div class="card">
       <div class="card-info">
-      <div>
+      <% if location.photo.attached? %>
+        <div>
+        <%= cl_image_tag location.photo.key, height: 300, width: 400, crop: :fill , class: "image_location" %>
+        </div>
+      <% else %>
+        <div>
         <%= image_tag('add-picture.svg', class: "image_location") %>
         </div>
+      <% end %>
         <div class="location-text">
           <h2 style="margin-bottom: 0px"><strong><%= location.name.capitalize %></strong></h2>
           <p style="margin-bottom: 0px"> plants🪴: <%= location.plants.count %></p>

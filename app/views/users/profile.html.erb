@@ -8,13 +8,14 @@
 <div class="user-container">
   <div class="user-profile-card">
     <div class="username-and-garden">
-      <h1><strong><%= @user.username %></strong></h1>
-      <h5> Garden name: <%= @user.garden_name  %></h5>
+      <h1><strong><%= current_user.username.capitalize %></strong></h1>
+      <p> Garden name: <%= current_user.garden_name.capitalize  %></p>
     </div>
     <div style= "margin-top: 5rem" class="plants-locations-n">
-    <p> number of plants: <%= @user.plants.count %></p>
-    <p> number of locations: <%= @user.locations.count %></p>
+    <p> Number of plants: <%= current_user.plants.count %></p>
+    <p> Number of locations: <%= current_user.locations.count %></p>
     </div>
+    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item text-center btn-outline" %>
   </div>
 
 </div>

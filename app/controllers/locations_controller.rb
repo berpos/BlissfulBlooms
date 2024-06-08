@@ -3,11 +3,15 @@ class LocationsController < ApplicationController
   before_action :set_location, only: %i[show ]
 
   def recentlocations
-    @status = Plant.where(state: %i[dehydrated messy degradated dying...])
+    @status = Location.joins(:plants)
+                      .group('locations.id')
+                      .where(plants: { state: ['dehydrated', 'messy', 'degradated', 'dying'] })
+                      .limit(6)
     @recent = Location.joins(:plants)
                       .group('locations.id')
                       .order('COUNT(plants.id) DESC')
                       .limit(4)
+    @locations = Location.all
   end
 
   def index
@@ -40,6 +44,6 @@ class LocationsController < ApplicationController
   end
 
   def location_params
-    params.require(:location).permit(:name, :updated_at)
+    params.require(:location).permit(:name, :updated_at, :photo)
   end
 end

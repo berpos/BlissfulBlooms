@@ -9,6 +9,7 @@
       </div>
       <div class="modal-body">
           <%= f.input :name, input_html: {value: "", style: "border: 3px solid #A8E063"} %>
+          <%= f.input :photo, as: :file %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn-primary-mod" data-bs-dismiss="modal">Close</button>

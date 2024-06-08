@@ -8,8 +8,8 @@
     <div>
       <p style="font-size: 12px;" class="mx-2 headerp">
       <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
-      <strong><%= current_user.username.capitalize %></strong>, it only takes you 2 minutes
-      to take care of your plants🪴, please remember that they are living organisms like us.
+      <strong><%= current_user.username.capitalize %></strong>, please remember that it only takes you 2 minutes
+      to take care of your plants🪴.
       </p>
     </div>
   </div>
@@ -18,11 +18,11 @@
   </div>
 </div>
 
-<div type="button" class ="create_plant d-flex justify-content-end">
+<div type="button" class ="create_plant d-flex justify-content-end mt-5">
     <%= link_to image_tag('AddButton.png', class: "create-cat grow"), new_location_plant_path(@location)%>
 </div>
 
-<div class="location-container" style="margin-top: 4.5rem; margin-bottom: 4rem;">
+<div class="location-container" style="margin-top: 1.5rem; margin-bottom: 4rem;">
   <% @location.plants.each do |plant| %>
     <div class="card">
       <div class="card-info">
@@ -46,7 +46,7 @@
             <%= "#{days} days old!" %>
           <% end %>
           </p>
-          <p><%= plant.state %></p>
+          <p><%= plant.state.capitalize %></p>
           <div class="level-container text-center"><p style="margin-bottom: 0px">
           <% if plant.level == 0 %>
             Lvl.0
