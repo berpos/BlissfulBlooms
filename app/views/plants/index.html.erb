@@ -8,7 +8,10 @@
       <p style="font-size: 12px;" class="mx-2 headerp">
       <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
       <% status = Plant.where(state: %i[dehydrated messy degradated dying...]) %>
-      <% if status.any? %>
+      <% if @plants.empty? %>
+          Meowdy <strong><%= current_user.username.capitalize %></strong>, as it's your first time here, in order to have plants🪴, you need
+        to plant them in your desired location by clicking the + button.
+      <% elsif status.any? %>
         <strong><%= current_user.username.capitalize %></strong>, please make sure to take care of
         <% status.each do |plant| %>
           <strong><%= "#{plant.name}🪴, " %></strong>
