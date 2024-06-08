@@ -7,11 +7,13 @@
     <div>
       <p style="font-size: 12px;" class="mx-2 headerp">
       <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
-      Welcome back <strong><%= current_user.username.capitalize %></strong> please make sure to take care of
       <% if @status.any?  %>
         <% @status.each do |plant| %>
+           Welcome back <strong><%= current_user.username.capitalize %></strong> please make sure to take care of
           <strong><%= "#{plant.name}🪴"%></strong> at <strong><%="#{plant.location.name}, " %></strong>
         <% end %>
+      <% else %>
+        Welcome back <strong><%= current_user.username.capitalize %></strong>, all your plants🪴 are healthy meowie! Keep up the good work!
       <% end %>
       </p>
     </div>
