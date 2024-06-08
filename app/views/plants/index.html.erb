@@ -7,7 +7,7 @@
     <div>
       <p style="font-size: 12px;" class="mx-2 headerp">
       <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
-      <% status = Plant.where(state: %i[dehydrated messy degradated dying...]).limit(10) %>
+      <% status = Plant.where(state: %i[dehydrated messy degradated dying...]).limit(5) %>
       <% if @plants.empty? %>
           Meowdy <strong><%= current_user.username.capitalize %></strong>, as it's your first time here, in order to have plants🪴, you need
         to plant them in your desired location by clicking the + button.
