@@ -27,7 +27,15 @@
     <div class="card">
       <div class="card-info">
         <div>
-          <%= image_tag('potted-plant.webp', class: "image_location mt-3") %>
+           <% if plant.level == 1 %>
+            <%= image_tag('Level2.png', class: "image_plants mt-1") %>
+          <% elsif plant.level == 2 %>
+            <%= image_tag('Level3.png', class: "image_plants mt-1") %>
+          <% elsif plant.level == 3 %>
+            <%= image_tag('Level4.png', class: "image_plants mt-1") %>
+          <% else %>
+            <%= image_tag('Level1.png', class: "image_plants mt-1") %>
+          <% end %>
         </div>
         <div class="location-text">
           <h2 style="margin-bottom: 0px"><strong><%= plant.name.capitalize%></strong></h2>
