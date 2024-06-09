@@ -50,10 +50,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75px;
+  height: 4.3rem;
   left: 50%;
   transform: translateX(-50%);
-  top: 4.5%;
+  top: 3.8%;
+  margin-bottom: 1rem;
+}
+
+.logo-profile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3.8%;
+  margin-bottom: 1rem;
 }
 
 .wrapper{
@@ -183,4 +196,12 @@
   border-radius: 14px;
   width: 90%;
   margin-right: 2rem;
+}
+
+.background-log {
+  background-color: #E9F1EE;
+  width: 16rem;
+  height: 20rem;
+  border-radius: 20px;
+  margin-top: 12px;
 }

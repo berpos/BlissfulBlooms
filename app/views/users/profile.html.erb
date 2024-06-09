@@ -1,19 +1,19 @@
 <div class="background-top" data-controller="messages">
   <div class="d-flex justify-content-between">
-    <%= image_tag('Logo.png', class: "logo") %>
-    <%= image_tag('CatIcon.png', class: "cat") %>
+    <%= image_tag('LogoDevise.png', class: "logo-profile mt-4") %>
   </div>
 </div>
 
 <div class="user-container">
   <div class="user-profile-card">
     <div class="username-and-garden">
+        <%= image_tag('CatIcon.png', class: "cat2") %>
       <h1><strong><%= current_user.username.capitalize %></strong></h1>
-      <p> Garden name: <%= current_user.garden_name.capitalize  %></p>
+      <p> <strong>Garden name:</strong> <%= current_user.garden_name.capitalize  %></p>
     </div>
-    <div style= "margin-top: 5rem" class="plants-locations-n">
-    <p> Number of plants: <%= current_user.plants.count %></p>
-    <p> Number of locations: <%= current_user.locations.count %></p>
+    <div class="plants-locations-n">
+    <p> <strong>Number of plants:</strong> <%= current_user.plants.count %></p>
+    <p> <strong>Number of locations:</strong> <%= current_user.locations.count %></p>
     </div>
     <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item text-center btn-outline" %>
   </div>

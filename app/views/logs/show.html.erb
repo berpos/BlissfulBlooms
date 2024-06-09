@@ -26,15 +26,14 @@
             <%= image_tag('potted-plant.webp', class: "carousel-img") %>
           </div>
           <div class="carousel-item">
-            <%= image_tag('plant.png', class: "carousel-img") %>
+            <div class="background-log text-center">
+              <%# TODO: fix this logs, to show specific plant log :) and fix carousel to stop moving automatically %>
+              <p><%= Log.last.content %></p>
+            </div>
           </div>
         </div>
       </div>
 
-
-      <button class="carousel-button active" type="button" style="margin-left: 8rem; margin-top: 5rem" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
-      <button class="carousel-button" type="button" style="margin-left: rem; margin-top: 5rem" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      
       <button class="arrow-btn carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="fa-solid fa-angle-left" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
