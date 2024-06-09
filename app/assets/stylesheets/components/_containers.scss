@@ -57,6 +57,18 @@
   margin-bottom: 1rem;
 }
 
+.logo-profile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3.8%;
+  margin-bottom: 1rem;
+}
+
 .wrapper{
   width: 100%;
   display: flex;
