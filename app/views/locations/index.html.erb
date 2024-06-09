@@ -3,10 +3,9 @@
     <%= image_tag('Logo.png', class: "logo") %>
     <%= image_tag('CatIcon.png', class: "cat") %>
   </div>
-  <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
+  <div class="message-container">
     <div>
       <p style="font-size: 12px;" class="mx-2 headerp">
-      <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
       You can find all your locations here! Or if you would like you can create a new one ! <strong>MEOW :3 </strong>
       </p>
     </div>
@@ -25,7 +24,7 @@
 
 <div class="location-container" style="margin-top: 1.5rem; margin-bottom: 4rem;">
   <% @locations.each do |location| %>
-    <div class="card">
+    <div class="card d-flex justify-content-between">
       <div class="card-info">
       <% if location.photo.attached? %>
         <div>
