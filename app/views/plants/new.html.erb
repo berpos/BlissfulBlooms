@@ -6,7 +6,8 @@
   <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
     <div>
       <p style="font-size: 12px;" class="mx-2">
-        Chose your plant!
+        Chose your plant! <%# TODO: change this caption %>
+    <div>
       </p>
     </div>
   </div>
@@ -14,12 +15,23 @@
 </div>
 
 <div class="new-plant-container position-absolute top-0 end-50" ><%#TODO: change class name%>
-  <div class="form-creation-plant">
+  <div class="form-creation-plant" data-controller="categories-select">
     <%= simple_form_for [@location, @plant] do |f| %>
       <%= f.input :name %>
-      <%= f.input :categories, collection: [['Person', 'person'], ['Moment', 'moment']] %>
+      <div class="images d-flex-even">
+       <div class="cat-image">
+        <%= image_tag "categories/person",id: "image1", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image1"} %>
+       </div>
+       <div class="cat-image">
+        <%= image_tag "categories/moment",id: "image2", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image2"} %>
+       </div>
+
+      </div>
+      <div class="radio-buttons-inline d-none">
+        <%= f.input :categories, collection: [['Person', 'person'], ['Moment', 'moment']], as: :radio_buttons%>
+      </div>
       <%= f.simple_fields_for @log do |m| %>
-        <%= m.input :content %>
+        <%= m.input :content, label: "Journal" %>
       <% end %>
       <%= f.submit "Create", class: "btn btn-primary-log" %>
     <% end %>
