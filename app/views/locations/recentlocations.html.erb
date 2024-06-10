@@ -13,6 +13,9 @@
         <% @status.each do |location| %>
           <strong><%="#{location.name}, " %></strong>
         <% end %>
+      <% elsif @plants.count.zero? %>
+        Meowdy <strong><%= current_user.username.capitalize %></strong>, as it's your first time here, in order to have plants🪴, you need
+        to plant them in your desired location by clicking the + button.
       <% else %>
         Welcome back <strong><%= current_user.username.capitalize %></strong>, all your plants🪴 are healthy meowie! Keep up the good work!
       <% end %>

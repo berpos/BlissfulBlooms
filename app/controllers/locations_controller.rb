@@ -12,6 +12,7 @@ class LocationsController < ApplicationController
                       .order('COUNT(plants.id) DESC')
                       .limit(4)
     @locations = Location.all
+    @plants = Plant.all
   end
 
   def index
