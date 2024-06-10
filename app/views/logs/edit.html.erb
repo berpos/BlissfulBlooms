@@ -12,10 +12,10 @@
 
   <div class="carousel-card position-absolute top-0 end-50">
     <div class="card-info" style="gap: 1rem">
-      <%= link_to plants_path do %>
+      <%= link_to location_path do %>
         <i class="fa-solid fa-chevron-left"></i>
       <% end %>
-      <h2 style="text-align: center;"> 🪴 Plant Name 🪴</h2>
+      <h2 style="text-align: center">🪴 Plant Name 🪴</h2>
     </div>
 
 
@@ -27,9 +27,27 @@
           </div>
         </div>
       </div>
-      <div class="dropdown-wrapper">
-        <div class="dropdown-box">
-          <div class="card-info-drop mt-2">
+      <div class="actions-wrapper">
+        <div class="actions-box">
+          <div class="card-info-drop mb-2">
+            <label for="exampleFormControlFile1", style="text-align: center">What's your action?</label>
+          </div>
+          <div class="btn-action-group">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <button type="button" class="btn btn-action-card"><%= image_tag('WaterCan.png', class: "btn-action-img") %></button>
+              <button type="button" class="btn btn-action-card"><%= image_tag('trimmer.png', class: "btn-action-img") %></button>
+              <button type="button" class="btn btn-action-card"><%= image_tag('soil 1.png', class: "btn-action-img") %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<%# <div class="card-info-drop mt-2">
             <label for="exampleFormControlFile1", style="text-align: center">What's your action?</label>
           </div>
           <select class="form-control form-control-sm mt-1" >
@@ -39,12 +57,4 @@
           </select>
           <div class="card-info-drop mt-2">
             <button type="submit" class="btn-normal-submit-drop">Go</button>
-          </div>
-        </div>
-
-      </div>
-
-
-    </div>
-  </div>
-</div>
+          </div> %>

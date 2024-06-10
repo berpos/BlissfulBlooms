@@ -1,5 +1,6 @@
 class LogsController < ApplicationController
-  before_action :set_logs, only: %i[new create]
+  before_action :set_plant, only: %i[create]
+  before_action :set_logs, only: %i[create]
 
   def new
     @log = Log.new
@@ -27,6 +28,10 @@ class LogsController < ApplicationController
 
   def set_logs
     @log = Log.find(params[:id])
+  end
+
+  def set_plant
+    @plant = plant.find(params[:plant_id])
   end
 
   def log_params

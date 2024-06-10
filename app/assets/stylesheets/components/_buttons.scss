@@ -137,3 +137,43 @@
   text-decoration: none;
   border: none;
 }
+
+.btn-action-card-1 {
+  background-color: #fff;
+  border-right: 0.2px solid #DBE7E3;
+  box-shadow: 4px 4px 8px #56ab2f25;
+  height: 80px;
+  width: 95px;
+  border-radius: 5px;
+  flex-direction: row;
+  align-items: flex-end;
+  // z-index: 5;
+  // margin-right: -9.1rem;
+}
+
+.btn-action-card-2 {
+  background-color: #fff;
+  border-right: 0.2px solid #DBE7E3;
+  border-left: 0.2px solid #DBE7E3;
+  box-shadow: 4px 4px 8px #56ab2f25;
+  height: 80px;
+  width: 95px;
+  border-radius: 5px;
+  flex-direction: row;
+  align-items: flex-end;
+  // z-index: 5;
+  // margin-right: -9.1rem;
+}
+
+.btn-action-card-3 {
+  background-color: #fff;
+  border-left: 0.2px solid #DBE7E3;
+  box-shadow: 4px 4px 8px #56ab2f25;
+  height: 80px;
+  width: 95px;
+  border-radius: 5px;
+  flex-direction: row;
+  align-items: flex-end;
+  // z-index: 5;
+  // margin-right: -9.1rem;
+}

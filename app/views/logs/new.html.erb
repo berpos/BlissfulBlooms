@@ -3,25 +3,64 @@
     <%= image_tag('Logo.png', class: "logo") %>
     <%= image_tag('CatIcon.png', class: "cat") %>
   </div>
-  <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
+  <div class="message-log-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
     <div>
-      <p style="font-size: 12px;" class="mx-2">
-        Chose your plant!
+      <p style="font-size: 11px;" class="m-1">
+        In order to treat your plant, choose your action! Don't forget to hit save!
       </p>
     </div>
   </div>
-    <h2 class="headers"><%= @location.name %></h2>
+    <h2 class="headers"></h2>
 </div>
 
-<div class="new-plant-container position-absolute top-0 end-50" ><%#TODO: change class name%>
-  <div class="form-creation-plant">
-    <%= simple_form_for [@plant, @log] do |f| %>
-      <%= f.simple_fields_for @log do |m| %>
-        <%= m.input :content %>
+<div class="container-carousel">
+
+  <div class="carousel-card position-absolute top-0 end-50">
+    <div class="card-info" style="gap: 0.5rem">
+      <%= link_to plants_path do %>
+        <i class="fa-solid fa-chevron-left"></i>
       <% end %>
-      <%= f.submit "Create", class: "btn btn-primary-log" %>
-    <% end %>
+      <h2 style="text-align: center">🪴 Plant Name 🪴</h2>
+    </div>
+
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner d-flex justify-content-center">
+        <div class="carousel-container ">
+          <div class="carousel-item active">
+            <%= image_tag('potted-plant.webp', class: "logs-carousel-img") %>
+          </div>
+        </div>
+      </div>
+      <div class="actions-wrapper">
+        <div class="actions-box">
+          <div class="card-info-drop mb-2">
+            <label for="exampleFormControlFile1", style="text-align: center">What's your action?</label>
+          </div>
+          <div class="btn-action-group">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <button type="button" class="btn btn-action-card-1"> <%= image_tag('WaterCan.png', class: "btn-action-img") %></button>
+              <button type="button" class="btn btn-action-card-2"> <%= image_tag('trimmer.png', class: "btn-action-img") %></button>
+              <button type="button" class="btn btn-action-card-3"> <%= image_tag('soil_1.png', class: "btn-action-img") %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="new-log-container position-absolute " ><%#TODO: change class name%>
+        <div class="form-log-plant">
+          <%= simple_form_for [@plant, @log] do |f| %>
+            <%= f.simple_fields_for @log do |m| %>
+              <%= m.input :content %>
+            <% end %>
+            <%= f.submit "Save", class: "btn btn-primary-log" %>
+          <% end %>
   </div>
   <div class="form-creation-plant">
+  </div>
+</div>
+
+
+    </div>
   </div>
 </div>
