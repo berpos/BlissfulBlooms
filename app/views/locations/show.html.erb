@@ -55,18 +55,19 @@
             <% end %>
             </p>
             <p><%= plant.state.capitalize %></p>
-            <div class="level-container text-center"><p style="margin-bottom: 0px">
-            <% if plant.level == 0 %>
-              Lvl.0
-            <% else %>
-              <%= "Lvl.#{plant.level}" %>
-            <% end %>
-            </p>
+            <div class="level-container text-center">
+              <p style="margin-bottom: 0px">
+                <% if plant.level == 0 %>
+                  Lvl.0
+                <% else %>
+                  <%= "Lvl.#{plant.level}" %>
+                <% end %>
+              </p>
             </div>
           </div>
-          <div>
-            <%= link_to "Go", edit_path(plant) %>
-          </div>
+        </div>
+        <div>
+          <%= link_to "alo", new_plant_log_path(plant) %>
         </div>
       </div>
     <% end %>
