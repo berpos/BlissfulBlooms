@@ -8,8 +8,9 @@ class LocationsController < ApplicationController
                       .where(plants: { state: ['dehydrated', 'messy', 'degradated', 'dying'] })
                       .limit(6)
     @recent = Location.joins(:plants)
+                      .select('locations.*, MAX(plants.updated_at) as last_plant_update')
                       .group('locations.id')
-                      .order('COUNT(plants.id) DESC')
+                      .order('last_plant_update DESC')
                       .limit(4)
     @locations = Location.all
     @plants = Plant.all

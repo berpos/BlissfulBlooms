@@ -59,7 +59,7 @@ class PlantsController < ApplicationController
     #@log = @plant.logs.build(log_params) # Do i need this?
 
     if @log.save
-      @plant.leveling
+      #@plant.leveling
       redirect_to location_path(@location)
     else
       render :new, status: :unprocessable_entity
