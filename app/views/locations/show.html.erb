@@ -1,73 +1,75 @@
-
-<div class="background-top fixed-top">
-  <div class="d-flex justify-content-between">
-    <%= image_tag('Logo.png', class: "logo") %>
-    <%= image_tag('CatIcon.png', class: "cat") %>
-  </div>
-  <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
-    <div>
-      <p style="font-size: 12px;" class="mx-2 headerp">
-      <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
-      <strong><%= current_user.username.capitalize %></strong>, please remember that it only takes you 2 minutes
-      to take care of your plants🪴.
-      </p>
+<div class="container-plant">
+  <div class="background-top fixed-top">
+    <div class="d-flex justify-content-between">
+      <%= image_tag('Logo.png', class: "logo") %>
+      <%= image_tag('CatIcon.png', class: "cat") %>
+    </div>
+    <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
+      <div>
+        <p style="font-size: 13px;" class="mx-2 headerp">
+          <% if @location.plants.empty? %>
+            Welcome to your new location <strong><%= current_user.username.capitalize %></strong>, now you only need to start by planting your first seed mEEEwr.
+          <% else %>
+            <strong><%= current_user.username.capitalize %></strong>, please remember that it only takes you 2 minutes
+            to take care of your plants🪴.
+          <% end %>
+        </p>
+      </div>
     </div>
   </div>
-  <div>
-    <h2 class="headers"><%= @location.name %></h2>
+
+  <div type="button" class ="create_plant d-flex justify-content-end mt-5">
+      <%= link_to image_tag('catplusPNG.png', class: "create-cat grow"), new_location_plant_path(@location)%>
   </div>
-</div>
 
-<div type="button" class ="create_plant d-flex justify-content-end mt-5">
-    <%= link_to image_tag('catplusPNG.png', class: "create-cat grow"), new_location_plant_path(@location)%>
-</div>
-
-<div class="location-container" style="margin-top: 1.5rem; margin-bottom: 4rem;">
-  <% @location.plants.each do |plant| %>
-    <div class="card">
-      <div class="card-info">
-        <div>
-           <% if plant.level == 1 %>
-            <%= image_tag('Level2.png', class: "image_plants mt-1") %>
-          <% elsif plant.level == 2 %>
-            <%= image_tag('Level3.png', class: "image_plants mt-1") %>
-          <% elsif plant.level == 3 %>
-            <%= image_tag('Level4.png', class: "image_plants mt-1") %>
-          <% else %>
-            <%= image_tag('Level1.png', class: "image_plants mt-1") %>
-          <% end %>
-        </div>
-        <div class="location-text">
-          <h2 style="margin-bottom: 0px"><strong><%= plant.name.capitalize%></strong></h2>
-          <p style="margin-bottom: 0px">
-          <% time = Time.new %>
-          <% days_difference = (time.to_date - plant.created_at.to_date).to_i %>
-          <% remaining_days = days_difference % 365 %>
-          <% days = remaining_days % 30 %>
-          <% months = remaining_days / 30 %>
-          <% years = days_difference / 365 %>
-          <% if years > 0 %>
-            <%= "#{years} years old!" %>
-          <% elsif months > 0 %>
-            <%= "#{months} months old!" %>
-          <% else %>
-            <%= "#{days} days old!" %>
-          <% end %>
-          </p>
-          <p><%= plant.state.capitalize %></p>
-          <div class="level-container text-center"><p style="margin-bottom: 0px">
-          <% if plant.level == 0 %>
-            Lvl.0
-          <% else %>
-            <%= "Lvl.#{plant.level}" %>
-          <% end %>
-          </p>
+  <div class="location-container" style="margin-top: 1.5rem; margin-bottom: 4rem;">
+    <% @location.plants.each do |plant| %>
+      <div class="card">
+        <div class="card-info">
+          <div>
+            <% if plant.level == 1 %>
+              <%= image_tag('Level2.png', class: "image_plants mt-1") %>
+            <% elsif plant.level == 2 %>
+              <%= image_tag('Level3.png', class: "image_plants mt-1") %>
+            <% elsif plant.level == 3 %>
+              <%= image_tag('Level4.png', class: "image_plants mt-1") %>
+            <% else %>
+              <%= image_tag('Level1.png', class: "image_plants mt-1") %>
+            <% end %>
+          </div>
+          <div class="location-text">
+            <h2 style="margin-bottom: 0px"><strong><%= plant.name.capitalize%></strong></h2>
+            <p style="margin-bottom: 0px">
+            <% time = Time.new %>
+            <% days_difference = (time.to_date - plant.created_at.to_date).to_i %>
+            <% remaining_days = days_difference % 365 %>
+            <% days = remaining_days % 30 %>
+            <% months = remaining_days / 30 %>
+            <% years = days_difference / 365 %>
+            <% if years > 0 %>
+              <%= "#{years} years old!" %>
+            <% elsif months > 0 %>
+              <%= "#{months} months old!" %>
+            <% else %>
+              <%= "#{days} days old!" %>
+            <% end %>
+            </p>
+            <p><%= plant.state.capitalize %></p>
+            <div class="level-container text-center">
+              <p style="margin-bottom: 0px">
+                <% if plant.level == 0 %>
+                  Lvl.0
+                <% else %>
+                  <%= "Lvl.#{plant.level}" %>
+                <% end %>
+              </p>
+            </div>
           </div>
         </div>
         <div>
           <%= link_to "alo", new_plant_log_path(plant) %>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

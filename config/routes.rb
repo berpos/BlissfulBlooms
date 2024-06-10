@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "location/:id/edit", to: "logs#edit", as: :edit
   patch "location/:id", to: "logs#update"
   get "logs", to: "logs#show"
+  get "landing", to: "pages#home"
 
   resources :locations do
     resources :plants, only: %i[new create]

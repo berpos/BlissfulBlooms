@@ -2,9 +2,32 @@
   padding: 15px;
 }
 
+
 .form-log-plant {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 5px;
   padding-bottom: 15px;
+}
+
+.radio-buttons-inline .radio_buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.radio-buttons-inline .radio_buttons label {
+  display: flex;
+  align-items: center;
+}
+
+.d-flex-even {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.selected-image {
+  background: linear-gradient(0deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+  transform: translateY(-3px);
 }

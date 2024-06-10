@@ -8,10 +8,12 @@ class LocationsController < ApplicationController
                       .where(plants: { state: ['dehydrated', 'messy', 'degradated', 'dying'] })
                       .limit(6)
     @recent = Location.joins(:plants)
+                      .select('locations.*, MAX(plants.updated_at) as last_plant_update')
                       .group('locations.id')
-                      .order('COUNT(plants.id) DESC')
+                      .order('last_plant_update DESC')
                       .limit(4)
     @locations = Location.all
+    @plants = Plant.all
   end
 
   def index
@@ -31,7 +33,7 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     @location.user_id = current_user.id
     if @location.save
-      redirect_to locations_path
+      redirect_to location_path(@location)
     else
       render :new, status: :unprocessable_entity
     end
