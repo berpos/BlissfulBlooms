@@ -15,6 +15,6 @@
     <%= yield %>
 
     <%= render "layouts/new_location_modal" %>
-    <%= render "layouts/container_footer" %>
+    <%= render "layouts/container_footer" unless @exclude_footer %>
   </body>
 </html>

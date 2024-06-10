@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<style> body { background: rgb(86,171,47); background: linear-gradient(90deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%); background-color: linear; height: 10px}
+
+</style>
+
+<div class="d-flex justify-content-between">
+  <%= image_tag('LogoDevise.png', class: "logo-profile mt-4") %>
+</div>
+
+<div class="landing-container">
+  <div class="landing-profile-card">
+    <div class="username-and-garden">
+      <%= image_tag('CatIcon.png', class: "cat2") %>
+    </div>
+    <div class="background-log2">
+      <p style="font-weight: 600; font-size: 15px; padding-left: 10px; padding-top: 10px; color: #57AC30">Welcome to Blissful Blooms, we help you
+      practice your gratitude by taking care of plants🪴 that represent a person or a moment that you are grateful for.
+      This encourages deeper introspection and mindfulness about the things
+      that bring joy and meaning to your life.</p>
+      <div>
+        <%# TODO ADD A CAT PLAYING AT THE BOTTOM %>
+      </div>
+    </div>
+    <%= link_to "Log in", new_user_session_path, class: "dropdown-item text-center btn-outline" %>
+  </div>
+</div>

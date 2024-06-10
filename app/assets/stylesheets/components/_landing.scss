@@ -1,0 +1,27 @@
+.landing-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 9rem;
+}
+
+.landing-profile-card {
+  background-color: #fff;
+  border: 3px solid #DBE7E3;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  height: 74vh;
+  width: 49vh;
+  border-radius: 20px;
+  margin-top: 1rem;
+}
+
+.background-log2 {
+  background-color: #E9F1EE;
+  width: 18rem;
+  height: 20rem;
+  border-radius: 20px;
+  margin-left: 1.1rem;
+  margin-bottom: 1rem;
+}

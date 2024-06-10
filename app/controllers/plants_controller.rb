@@ -12,7 +12,7 @@ class PlantsController < ApplicationController
   def create
     @plant = Plant.new(plant_params)
     @plant.location = @location
-    
+
     if @plant.save
       create_log
     else
