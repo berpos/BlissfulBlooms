@@ -33,7 +33,7 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     @location.user_id = current_user.id
     if @location.save
-      redirect_to locations_path
+      redirect_to location_path(@location)
     else
       render :new, status: :unprocessable_entity
     end

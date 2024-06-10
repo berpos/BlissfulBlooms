@@ -8,8 +8,12 @@
     <div>
       <p style="font-size: 13px;" class="mx-2 headerp">
       <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
-      <strong><%= current_user.username.capitalize %></strong>, please remember that it only takes you 2 minutes
-      to take care of your plants🪴.
+      <% if @location.plants.empty? %>
+        Welcome to your new location <strong><%= current_user.username.capitalize %></strong>, now you only need to start by planting your first seed mEEEwr.
+      <% else %>
+        <strong><%= current_user.username.capitalize %></strong>, please remember that it only takes you 2 minutes
+        to take care of your plants🪴.
+      <% end %>
       </p>
     </div>
   </div>
