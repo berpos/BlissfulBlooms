@@ -10,8 +10,8 @@
         Welcome to Blissful Blooms <strong><%= current_user.username.capitalize %></strong>, to start make sure to create your first location.
       <% elsif @status.any?  %>
         Welcome back <strong><%= current_user.username.capitalize %></strong> you have plants🪴 to take care of at
-        <% @status.each do |location| %>
-          <strong><%="#{location.name}, " %></strong>
+        <% @status.each_with_index do |location, index| %>
+          <strong><%= location.name %></strong><%= (index == @status.size - 1 ? "..." : ", ") %>
         <% end %>
       <% elsif @plants.count.zero? %>
         Meowdy <strong><%= current_user.username.capitalize %></strong>, as it's your first time here, in order to have plants🪴, you need
