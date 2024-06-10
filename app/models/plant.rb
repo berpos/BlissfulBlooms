@@ -17,5 +17,4 @@ class Plant < ApplicationRecord
   def set_default_level
     self.level ||= 0
   end
-  
 end
