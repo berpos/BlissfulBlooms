@@ -1,0 +1,34 @@
+.background-landing {
+  background: rgb(86,171,47);
+  background: linear-gradient(90deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%);
+  background-color: linear;
+  height: 100vh;
+}
+
+.landing-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 9rem;
+}
+
+.landing-profile-card {
+  background-color: #fff;
+  border: 3px solid #DBE7E3;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  height: 74vh;
+  width: 49vh;
+  border-radius: 20px;
+  margin-top: 1rem;
+}
+
+.background-log2 {
+  background-color: #E9F1EE;
+  width: 18rem;
+  height: 20rem;
+  border-radius: 20px;
+  margin-left: 1.1rem;
+  margin-bottom: 1rem;
+}

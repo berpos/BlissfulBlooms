@@ -1,2 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<style> body { background: rgb(86,171,47); background: linear-gradient(90deg, rgba(86,171,47,1) 0%, rgba(168,224,99,1) 100%); background-color: linear;}</style>
+
+<div class="d-flex justify-content-between">
+  <%= image_tag('LogoDevise.png', class: "logo-profile mt-4") %>
+</div>
+
+<div class="landing-container">
+  <div class="landing-profile-card">
+    <div class="username-and-garden">
+      <%= image_tag('CatIcon.png', class: "cat2") %>
+    </div>
+    <div class="background-log2">
+      <p style="font-weight: 600; font-size: 15px; padding-left: 10px; padding-top: 10px; color: #57AC30">Welcome to BlissfulBlooms, this app has the goal to help you
+      practice your gratitude by taking care of plants🪴. First you should start
+      by creating a location, for example Sintra. Then inside Sintra you can plant seeds that are going
+      to represent someone or a moment that made you feel grateful. You will be able to Journal why you felt
+      grateful for it.</p>
+    </div>
+    <%= link_to "Log in", new_user_session_path, class: "dropdown-item text-center btn-outline" %>
+  </div>
+
+</div>
