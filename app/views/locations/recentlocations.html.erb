@@ -3,23 +3,25 @@
     <%= image_tag('Logo.png', class: "logo") %>
     <%= image_tag('CatIcon.png', class: "cat") %>
   </div>
-  <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
+  <div class="message-container-recent"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
     <div>
-      <p style="font-size: 12px;" class="mx-2 headerp">
+      <p style="font-size: 13px;" class="mx-2 headerp">
       <% if @locations.empty? %>
-        Welcome to Blissful Blooms <strong><%= current_user.username.capitalize %></strong>, to start make sure to create your first location.
+        Welcome to Blissful Blooms <strong><%= current_user.username.capitalize %></strong>. This page will display your recent locations interactions🪴. To start make sure to create your first location.
       <% elsif @status.any?  %>
         Welcome back <strong><%= current_user.username.capitalize %></strong> you have plants🪴 to take care of at
-        <% @status.each do |location| %>
-          <strong><%="#{location.name}, " %></strong>
+        <% @status.each_with_index do |location, index| %>
+          <strong><%= location.name %></strong><%= (index == @status.size - 1 ? "..." : ", ") %>
         <% end %>
+      <% elsif @plants.count.zero? %>
+        Meowdy <strong><%= current_user.username.capitalize %></strong>, as it's your first time here, in order to have plants🪴, you need
+        to plant them in your desired location by clicking the + button.
       <% else %>
         Welcome back <strong><%= current_user.username.capitalize %></strong>, all your plants🪴 are healthy meowie! Keep up the good work!
       <% end %>
       </p>
     </div>
   </div>
-    <h2 class="headers"><%= current_user.garden_name.capitalize %></h2>
 </div>
 
 

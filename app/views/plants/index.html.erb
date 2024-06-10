@@ -5,7 +5,7 @@
   </div>
   <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
     <div>
-      <p style="font-size: 12px;" class="mx-2 headerp">
+      <p style="font-size: 13px;" class="mx-2 headerp">
       <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
       <% status = Plant.where(state: %i[dehydrated messy degradated dying...]).limit(5) %>
       <% if @plants.empty? %>
@@ -13,17 +13,14 @@
         to plant them in your desired location by clicking the + button.
       <% elsif status.any? %>
         <strong><%= current_user.username.capitalize %></strong>, please make sure to take care of
-        <% status.each do |plant| %>
-          <strong><%= "#{plant.name}🪴, " %></strong>
+        <% status.each_with_index do |plant, index| %>
+          <strong><%= "#{plant.name}🪴" %></strong><%=(index == status.size - 1 ? "..." : ", ") %>
         <% end %>
       <% else %>
         <strong><%= current_user.username.capitalize %></strong>, you are doing an amazing job at taking care of your plants🪴. Keep it up!
       <% end %>
       </p>
     </div>
-  </div>
-  <div>
-    <h2 class="headers"><%= current_user.garden_name.capitalize %></h2>
   </div>
 </div>
 
