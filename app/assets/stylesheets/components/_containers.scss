@@ -152,12 +152,12 @@
   background-color: #fff;
   border: 1px solid #DBE7E3;
   box-shadow: 4px 4px 8px #56ab2f25;
-  height: 72vh;
+  height: 70.3vh;
   width: 45vh;
   border-radius: 20px;
-  padding-top: 2rem;
+  padding-top: 1.3rem;
   z-index: 5;
-  margin-top: 8rem;
+  margin-top: 9rem;
   margin-right: -9.3rem;
 }
 
@@ -182,10 +182,10 @@
   height: 56vh;
   width: 38vh;
   border-radius: 20px;
-  height: 71vh;
+  height: 70.8vh;
   width: 44vh;
   border-radius: 20px;
-  margin-top: 8rem;
+  margin-top: 9rem;
   margin-right: -9.1rem;
 }
 
@@ -225,7 +225,6 @@
 
 .actions-box{
   position: relative;
-  margin-top: 0.5rem;
   // border-radius: 10px;
   // box-shadow: 0px 0px 10px #A8E063;
 
@@ -240,10 +239,9 @@
 .btn-action-img {
   display: flex;
   justify-content: center;
-  width: 65px;
-  height: 58px;
-  // border: 1px solid #DBE7E3;
-  // box-shadow: 4px 4px 8px #56ab2f25;
+  width: 4rem;
+  height: 3rem;
+  padding-right: 1rem;
   object-fit: fill;
   background: none;
 }
@@ -298,4 +296,14 @@
   align-items: center;
   justify-content: center;
   bottom: 0px;
+}
+
+.message-container-create {
+  background-color: #fff;
+  border: 2px solid #DBE7E3;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  width: 90%;
+  margin-left: 1rem;
+  height: 3.6rem;
 }

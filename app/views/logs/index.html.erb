@@ -11,11 +11,13 @@
 <div class="container-carousel">
 
   <div class="carousel-card position-absolute top-0 end-50">
-    <div class="card-info" style="gap: 1rem">
-      <%= link_to plants_path do %>
-        <i class="fa-solid fa-chevron-left"></i>
-      <% end %>
-      <h2 style="text-align: center;"> <%= @plant.name.capitalize %></h2>
+    <div class="card-info-log">
+      <div class="back-arrow">
+        <%= link_to plants_path do %>
+          <i class="fa-solid fa-chevron-left"></i>
+        <% end %>
+      </div>
+      <h2 style="text-align: center; color: #57AC30; font-weight: 500; font-size: 2rem"> <%= @plant.name.capitalize %></h2>
     </div>
 
 
@@ -37,8 +39,8 @@
             <div class="background-log text-center">
               <%# TODO: fix this logs, to show specific plant log :) and fix carousel to stop moving automatically %>
               <p><% @logs.each do |log| %>
-                <p><%= log.created_at.strftime("%B %d %Y, %l:%M%P") %></p>
-                <p><%= log.content %></p>
+                <p style="color: #36454F"><strong><%= log.created_at.strftime("%B %d %Y, %l:%M%P") %></strong></p>
+                <p style="color: #36454F"><%= log.content.capitalize %></p>
                 <% end %>
               </p>
             </div>

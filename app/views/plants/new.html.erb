@@ -3,15 +3,13 @@
     <%= image_tag('Logo.png', class: "logo") %>
     <%= image_tag('CatIcon.png', class: "cat") %>
   </div>
-  <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
+  <div class="message-container-create">
     <div>
-      <p style="font-size: 14px;" class="mx-2">
-        Let's creat your Plant! <%# TODO: change this caption %>
+      <p style="font-size: 14px;" class="mx-2 headerp">
+        Your plant🪴 can either represent a person or a moment!
       </p>
     <div>
-    </div>
   </div>
-    <h2 class="headers"><%= @location.name %></h2>
 </div>
 
 <div class="new-plant-container position-absolute top-0 end-50" ><%#TODO: change class name%>
@@ -20,21 +18,21 @@
       <%= f.input :name %>
         <div class="images d-flex-even">
           <div class="cat-image">
-            <%= image_tag "person.png",id: "image1", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image1"} %>
+            <%= image_tag "person.png",id: "image1", height: 90, width: 96, data: { action: "click->categories-select#select", categories_select_target: "image1"} %>
           </div>
           <div class="cat-image">
-            <%= image_tag "moment.png",id: "image2", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image2"} %>
+            <%= image_tag "moment.png",id: "image2", height: 90, width: 96, data: { action: "click->categories-select#select", categories_select_target: "image2"} %>
           </div>
 
         </div>
       <div class="radio-buttons-inline d-none">
-        <%= f.input :categories, collection: [['Person', 'person'], ['Moment', 'moment']], as: :radio_buttons%>
+        <%= f.input :categories, collection: [['Person', 'person'], ['Moment', 'moment']], as: :radio_buttons %>
       </div>
       <%= f.simple_fields_for @log do |m| %>
-        <%= m.input :content, label: "Journal" %>
+        <%= m.input :content, label: "Journal", input_html: { class: 'textarea-height' } %>
       <% end %>
       <%= f.submit "Create", class: "btn btn-primary-log" %>
     <% end %>
-    <%= link_to "Cancel", location_path(@location.id), class: "cancel-btn d-flex justify-content-end mt-5" %>
+    <%= link_to "Cancel", location_path(@location.id), class: "cancel-btn d-flex justify-content-center mt-3" %>
   </div>
 </div>
