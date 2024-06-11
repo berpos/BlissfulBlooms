@@ -2,6 +2,7 @@ class PlantsController < ApplicationController
   before_action :set_location, only: %i[new create]
   def index
     @plants = Plant.all
+    @plants.each(&:check_state)
   end
 
   def new
