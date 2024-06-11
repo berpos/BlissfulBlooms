@@ -5,7 +5,7 @@
   </div>
   <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
     <div>
-      <p style="font-size: 12px;" class="mx-2">
+      <p style="font-size: 14px;" class="mx-2">
         Chose your plant! <%# TODO: change this caption %>
     <div>
       </p>
@@ -16,14 +16,14 @@
 
 <div class="new-plant-container position-absolute top-0 end-50" ><%#TODO: change class name%>
   <div class="form-creation-plant" data-controller="categories-select">
-    <%= simple_form_for [@location, @plant] do |f| %>
+    <%= simple_form_for [@location, @plant], url: location_plants_path do |f| %>
       <%= f.input :name %>
       <div class="images d-flex-even">
        <div class="cat-image">
-        <%= image_tag "categories/person",id: "image1", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image1"} %>
+        <%= image_tag "person.png",id: "image1", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image1"} %>
        </div>
        <div class="cat-image">
-        <%= image_tag "categories/moment",id: "image2", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image2"} %>
+        <%= image_tag "moment.png",id: "image2", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image2"} %>
        </div>
 
       </div>

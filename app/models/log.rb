@@ -3,7 +3,7 @@ class Log < ApplicationRecord
   after_create :level_up
 
   validates :content, presence: true
-  validates :categories, inclusion: { in: %i[water trim soil] }
+  validates :categories, inclusion: { in: %w[healthy water trim soil] }
 
   def level_up
     log_count = plant.logs.count

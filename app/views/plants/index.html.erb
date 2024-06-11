@@ -5,7 +5,7 @@
   </div>
   <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
     <div>
-      <p style="font-size: 13px;" class="mx-2 headerp">
+      <p style="font-size: 14px;" class="mx-2 headerp">
       <%# TODO: ADD ONLY 4 LOCATIONS WITH THE CONDITION  %>
       <% status = Plant.where(state: %i[dehydrated messy degradated dying...]).limit(5) %>
       <% if @plants.empty? %>
