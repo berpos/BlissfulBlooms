@@ -15,7 +15,7 @@
       <%= link_to plants_path do %>
         <i class="fa-solid fa-chevron-left"></i>
       <% end %>
-      <h2 style="text-align: center;"> 🪴 Plant Name 🪴</h2>
+      <h2 style="text-align: center;"> <%= @plant.name.capitalize %></h2>
     </div>
 
 
@@ -29,7 +29,11 @@
           <div class="carousel-item">
             <div class="background-log text-center">
               <%# TODO: fix this logs, to show specific plant log :) and fix carousel to stop moving automatically %>
-              <p><%= @log.content %></p>
+              <p><% @logs.each do |log| %>
+                <p><%= log.created_at.strftime("%B %d %Y, %l:%M%P") %></p>
+                <p><%= log.content %></p>
+                <% end %>
+              </p>
             </div>
           </div>
         </div>
