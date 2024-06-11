@@ -25,7 +25,7 @@
   <div class="location-container" style="margin-top: 1.5rem; margin-bottom: 4rem;">
     <% @location.plants.each do |plant| %>
       <div class="card">
-        <div class="card-info">
+        <div class="card-info-plant">
           <div>
             <% if plant.level == 1 %>
               <%= image_tag('Level2.png', class: "image_plants mt-1") %>
@@ -66,8 +66,8 @@
             </div>
           </div>
         </div>
-        <div>
-          <%= link_to "alo", new_plant_log_path(plant) %>
+        <div class="btn btn-outline-go">
+          <%= link_to "Go", new_plant_log_path(plant) %>
         </div>
       </div>
     <% end %>
