@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "profile", to: "users#profile"
   get "location/:id/edit", to: "logs#edit", as: :edit
   patch "location/:id", to: "logs#update"
-  get "logs", to: "logs#show"
+  get "logs", to: "logs#index"
   get "landing", to: "pages#home"
 
   resources :locations do
@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   end
 
   resources :plants, except: %i[new create]  do
-    resources :logs, only: %i[new create]
+    resources :logs, only: %i[index new create]
   end
 end
