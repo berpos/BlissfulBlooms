@@ -1,6 +1,6 @@
 class LogsController < ApplicationController
   before_action :set_plant, only: %i[create new]
-  before_action :set_logs, only: %i[create]
+  #before_action :set_logs, only: %i[create]
 
   def new
     @log = Log.new
@@ -8,10 +8,11 @@ class LogsController < ApplicationController
   end
 
   def create
-    @log = Logs.new(log_params)
+    @log = Log.new(log_params)
     @log.plant = @plant
+    @location = @plant.location
     if @log.save
-      redirect_to location_path(@location)
+      redirect_to location_path(@location), notice: "Log was successfully updated."
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,6 +38,6 @@ class LogsController < ApplicationController
   end
 
   def log_params
-    params.require(:log).permit(:content)
+    params.require(:log).permit(:content, :categories)
   end
 end

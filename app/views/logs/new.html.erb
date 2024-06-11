@@ -14,7 +14,7 @@
 <div class="container-carousel">
 
   <div class="carousel-card position-absolute top-0 end-50">
-    <div class="card-info">
+    <div class="card-info-log">
       <div class="back-arrow">
         <%= link_to location_path(@location) do %>
           <i class="fa-solid fa-chevron-left"></i>
@@ -39,9 +39,9 @@
           </div>
           <div class="btn-action-group">
             <div class="btn-group" role="group" aria-label="Basic outlined example" data-controller="disable-button">
-              <button type="button" class="btn btn-action-card-1" data-action="click->disable-button#disable" data-disable-button-target="button"> <%= image_tag('WaterCan.png', class: "btn-action-img") %></button>
-              <button type="button" class="btn btn-action-card-2" data-action="click->disable-button#disable" data-disable-button-target="button-1"> <%= image_tag('trimmer.png', class: "btn-action-img") %></button>
-              <button type="button" class="btn btn-action-card-3" data-action="click->disable-button#disable" data-disable-button-target="button-2"> <%= image_tag('soil_1.png', class: "btn-action-img") %></button>
+              <button type="button" class="btn btn-action-card-1" data-action="click->disable-button#disable" data-disable-button-target="water"> <%= image_tag('WaterCan.png', class: "btn-action-img") %></button>
+              <button type="button" class="btn btn-action-card-2" data-action="click->disable-button#disable" data-disable-button-target="trim"> <%= image_tag('trimmer.png', class: "btn-action-img") %></button>
+              <button type="button" class="btn btn-action-card-3" data-action="click->disable-button#disable" data-disable-button-target="soil"> <%= image_tag('soil_1.png', class: "btn-action-img") %></button>
             </div>
           </div>
         </div>
@@ -50,9 +50,11 @@
       <div class="new-log-container position-absolute " ><%#TODO: change class name%>
         <div class="form-log-plant">
           <%= simple_form_for [@plant, @log] do |f| %>
-            <%= f.simple_fields_for @log do |m| %>
-              <%= m.input :content %>
-            <% end %>
+            <div class="d-none">
+              <%= f.input :categories, as: :radio_buttons, collection: ["water","trim","soil"] %>
+            </div>
+              <p style="text-align: center"><em>Today's story:</em></p>
+            <%= f.input :content, label: false %>
             <%= f.submit "Save", class: "btn btn-primary-log" %>
           <% end %>
         </div>

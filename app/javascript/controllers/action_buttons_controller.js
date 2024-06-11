@@ -2,10 +2,15 @@ import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
 
-  static targets = ["button", "button-1", "button-2"]
+  static targets = ["water", "trim", "soil"]
 
-  disable() {
+  disable(event) {
     // console.log("Hello");
-    this.buttonTarget.setAttribute("disabled", "", "", "");
+    this.waterTarget.removeAttribute('disabled');
+    this.trimTarget.removeAttribute('disabled');
+    this.soilTarget.removeAttribute('disabled');
+    event.currentTarget.setAttribute("disabled", "");
+    let radiobutton = `log_categories_${event.currentTarget.dataset.disableButtonTarget}`;
+    document.getElementById(radiobutton).click();
   }
 }
