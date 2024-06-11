@@ -9,7 +9,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.4rem;
+  // gap: 1.4rem;
+  // position: absolute;
+  margin-right: 100px;
+}
+
+.back-arrow {
+  margin-right: 80px;
 }
 
 .card {
@@ -48,4 +54,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.card-info-plant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  width: 230px;
 }

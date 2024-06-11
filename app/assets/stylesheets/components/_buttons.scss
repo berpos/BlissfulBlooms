@@ -54,7 +54,7 @@
 
 .create_plant {
   position: sticky;
-  top: calc(100% - 13rem);
+  top: calc(100% - 12rem);
   z-index: 5;
 }
 
@@ -176,4 +176,29 @@
   align-items: flex-end;
   // z-index: 5;
   // margin-right: -9.1rem;
+}
+
+.btn-outline-go {
+  border: 2px solid #000;
+  border-color: #A8E063;
+  width: 20%;
+  left: 50%;
+  transform: translateX(35%);
+  color: #56AB2F;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  margin-right: 12px;
+  margin-bottom: 95px;
+
+}
+
+.btn-outline-go:hover {
+  background-color: #A8E063;
+  color: #fff;
+}
+
+.btn-outline-go a{
+  text-decoration: none;
+  color: #56AB2F;
 }

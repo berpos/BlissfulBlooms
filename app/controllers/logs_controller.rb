@@ -1,9 +1,10 @@
 class LogsController < ApplicationController
-  before_action :set_plant, only: %i[create]
+  before_action :set_plant, only: %i[create new]
   before_action :set_logs, only: %i[create]
 
   def new
     @log = Log.new
+    @location = @plant.location
   end
 
   def create
@@ -17,8 +18,9 @@ class LogsController < ApplicationController
   end
 
   def update
+    @log.plant = @plant
     if @log.update(log_params)
-      redirect_to log_path(@log), notice: "Walker was successfully updated.", status: :see_other
+      redirect_to log_path(@log), notice: "Log was successfully updated.", status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -31,7 +33,7 @@ class LogsController < ApplicationController
   end
 
   def set_plant
-    @plant = plant.find(params[:plant_id])
+    @plant = Plant.find(params[:plant_id])
   end
 
   def log_params
