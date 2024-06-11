@@ -217,13 +217,13 @@
 }
 
 .cancel-btn{
-  background: rgb(69, 70, 69);
-  background-color: linear;
+  border: 2px solid #000;
+  border-color: #A8E063;
+  width: 40%;
   border-radius: 8px;
-  color: #fff;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  color: #56AB2F;
   box-shadow: 4px 4px 8px #56ab2f25;
+  text-decoration: none;
+  margin-left: 5rem;
+
 }
