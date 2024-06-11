@@ -23,8 +23,15 @@
       <div class="carousel-inner d-flex justify-content-center">
         <div class="carousel-container ">
           <div class="carousel-item active">
-            <%= image_tag('potted-plant.webp', class: "carousel-img") %>
-
+            <% if @plant.level == 1 %>
+              <%= image_tag('Level2.png', class: "image_plants2") %>
+            <% elsif @plant.level == 2 %>
+              <%= image_tag('Level3.png', class: "image_plants2") %>
+            <% elsif @plant.level == 3 %>
+              <%= image_tag('Level4.png', class: "image_plants2") %>
+            <% else %>
+              <%= image_tag('Level1.png', class: "image_plants2") %>
+            <% end %>
           </div>
           <div class="carousel-item">
             <div class="background-log text-center">
