@@ -10,7 +10,7 @@ class PlantsController < ApplicationController
   end
 
   def create
-    @plant = Plant.new(plant_params)
+    @plant = Plant.new(name: plant_params.dig(:name), categories: plant_params.dig(:categories))
     @plant.location = @location
 
     if @plant.save
@@ -31,16 +31,14 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:name, :categories, logs_attributes: [:content])
-  end
-
-  def log_params
-    params.require(:plant).permit(log_attributes: [:content])
+    params.require(:plant).permit(:name, :categories, log: {})
   end
 
   def create_log
     @log = Log.new(content: params["plant"]["log"]["content"])
     @log.plant = @plant
+    @log.categories = "healthy"
+
 
     if @log.save
       redirect_to location_path(@location)

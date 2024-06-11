@@ -16,7 +16,7 @@
 
 <div class="new-plant-container position-absolute top-0 end-50" ><%#TODO: change class name%>
   <div class="form-creation-plant" data-controller="categories-select">
-    <%= simple_form_for [@location, @plant] do |f| %>
+    <%= simple_form_for [@location, @plant], url: location_plants_path do |f| %>
       <%= f.input :name %>
       <div class="images d-flex-even">
        <div class="cat-image">
