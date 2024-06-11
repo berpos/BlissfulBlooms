@@ -1,6 +1,10 @@
 class LogsController < ApplicationController
-  before_action :set_plant, only: %i[create new]
-  #before_action :set_logs, only: %i[create]
+  before_action :set_plant, only: %i[index create new]
+  before_action :set_logs, only: %i[create]
+
+  def index
+    @logs = @plant.logs
+  end
 
   def new
     @log = Log.new

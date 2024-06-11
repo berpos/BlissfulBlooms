@@ -6,9 +6,9 @@
   <div class="message-container"> <%# TODO: ADD RUBY AFTER WITH CONDITIONS %>
     <div>
       <p style="font-size: 14px;" class="mx-2">
-        Chose your plant! <%# TODO: change this caption %>
-    <div>
+        Let's creat your Plant! <%# TODO: change this caption %>
       </p>
+    <div>
     </div>
   </div>
     <h2 class="headers"><%= @location.name %></h2>
@@ -18,15 +18,15 @@
   <div class="form-creation-plant" data-controller="categories-select">
     <%= simple_form_for [@location, @plant], url: location_plants_path do |f| %>
       <%= f.input :name %>
-      <div class="images d-flex-even">
-       <div class="cat-image">
-        <%= image_tag "person.png",id: "image1", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image1"} %>
-       </div>
-       <div class="cat-image">
-        <%= image_tag "moment.png",id: "image2", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image2"} %>
-       </div>
+        <div class="images d-flex-even">
+          <div class="cat-image">
+            <%= image_tag "person.png",id: "image1", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image1"} %>
+          </div>
+          <div class="cat-image">
+            <%= image_tag "moment.png",id: "image2", height: 80, width: 80, data: { action: "click->categories-select#select", categories_select_target: "image2"} %>
+          </div>
 
-      </div>
+        </div>
       <div class="radio-buttons-inline d-none">
         <%= f.input :categories, collection: [['Person', 'person'], ['Moment', 'moment']], as: :radio_buttons%>
       </div>
@@ -35,7 +35,6 @@
       <% end %>
       <%= f.submit "Create", class: "btn btn-primary-log" %>
     <% end %>
-  </div>
-  <div class="form-creation-plant">
+    <%= link_to "Cancel", location_path(@location.id), class: "cancel-btn d-flex justify-content-end mt-5" %>
   </div>
 </div>
