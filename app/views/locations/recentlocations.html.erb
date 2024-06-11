@@ -7,7 +7,7 @@
     <div>
       <p style="font-size: 14px;" class="mx-2 headerp">
       <% if @locations.empty? %>
-        Welcome to Blissful Blooms <strong><%= current_user.username.capitalize %></strong>. This page will display your recent locations interactions🪴. To start make sure to create your first location.
+        <strong><%= current_user.username.capitalize %></strong>. This page will display your recent locations interactions🪴. To start make sure to create your first location.
       <% elsif @status.any?  %>
         Welcome back <strong><%= current_user.username.capitalize %></strong> you have plants🪴 to take care of at
         <% @status.each_with_index do |location, index| %>
