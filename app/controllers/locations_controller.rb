@@ -1,11 +1,10 @@
 class LocationsController < ApplicationController
-
-  before_action :set_location, only: %i[show ]
+  before_action :set_location, only: %i[show]
 
   def recentlocations
     @status = Location.joins(:plants)
                       .group('locations.id')
-                      .where(plants: { state: ['dehydrated', 'messy', 'degradated', 'dying'] })
+                      .where(plants: { state: ["need caring"] })
                       .limit(6)
     @recent = Location.joins(:plants)
                       .select('locations.*, MAX(plants.updated_at) as last_plant_update')
