@@ -1,6 +1,8 @@
 // Import and register all your controllers from the importmap under controllers/*
 
 import { application } from "controllers/application";
+import ActionButtonsController from "./action_buttons_controller";
+Stimulus.register("disable-button", ActionButtonsController)
 
 
 // Eager load all controllers defined in the import map under controllers/**/*_controller
