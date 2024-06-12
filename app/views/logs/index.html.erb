@@ -50,8 +50,8 @@
             <div class="background-log text-center">
               <%# TODO: fix this logs, to show specific plant log :) and fix carousel to stop moving automatically %>
               <p><% @logs.each do |log| %>
-                <p style="color: #36454F"><strong><%= log.created_at.strftime("%B %d %Y, %l:%M%P") %></strong></p>
-                <p style="color: #36454F"><%= log.content.capitalize %></p>
+                <p style="color: #36454F; padding-right: 2px; padding-left: 2px;"><strong><%= log.created_at.strftime("%B %d %Y, %l:%M%P") %></strong></p>
+                <p style="color: #36454F; padding-right: 2px; padding-left: 2px;"><%= log.content.capitalize %></p>
                 <% end %>
               </p>
             </div>
