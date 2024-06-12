@@ -11,11 +11,13 @@ export default class extends Controller {
     // event listener nas images
     if (event.currentTarget.id == "image1") {
       // imagem 1 click
+
       this.image1Target.classList.toggle("selected-image")
       this.image2Target.classList.remove("selected-image")
       document.getElementById("plant_categories_person").click()
     }else {
       //imagem 2 click
+
       this.image2Target.classList.toggle("selected-image")
       this.image1Target.classList.remove("selected-image")
       document.getElementById("plant_categories_moment").click()
