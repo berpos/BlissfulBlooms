@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["water", "trim", "soil"]
 
   disable(event) {
-    // console.log("Hello");
+    console.log("Hello");
     this.waterTarget.removeAttribute('disabled');
     this.trimTarget.removeAttribute('disabled');
     this.soilTarget.removeAttribute('disabled');
