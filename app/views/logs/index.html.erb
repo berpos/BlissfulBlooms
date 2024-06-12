@@ -34,6 +34,17 @@
             <% else %>
               <%= image_tag('Level1.png', class: "image_plants2") %>
             <% end %>
+            <div class="div-level-conatiner-plant">
+              <div class="level-container-plant text-center">
+              <p style="margin-bottom: 0px;">
+                  <% if @plant.level == 0 %>
+                    Lvl.0
+                  <% else %>
+                    <%= "Lvl.#{@plant.level}" %>
+                  <% end %>
+                </p>
+              </div>
+            </div>
           </div>
           <div class="carousel-item">
             <div class="background-log text-center">
