@@ -46,10 +46,10 @@
             <label for="exampleFormControlFile1", style="text-align: center">What's your action?</label>
           </div>
           <div class="btn-action-group">
-            <div class="btn-group" role="group" aria-label="Basic outlined example" data-controller="disable-button">
-              <button type="button" class="btn btn-action-card-1" data-action="click->disable-button#disable" data-disable-button-target="water" style="height: 4.4rem; width: 4.4rem; display: flex"> <%= image_tag('WaterCan.png', class: "btn-action-img") %></button>
-              <button type="button" class="btn btn-action-card-2" data-action="click->disable-button#disable" data-disable-button-target="trim" style="height: 4.4rem; width: 4.4rem; display: flex"> <%= image_tag('trimmer.png', class: "btn-action-img") %></button>
-              <button type="button" class="btn btn-action-card-3" data-action="click->disable-button#disable" data-disable-button-target="soil" style="height: 4.4rem; width: 4.4rem; display: flex"> <%= image_tag('soil_1.png', class: "btn-action-img") %></button>
+            <div class="btn-group" role="group" aria-label="Basic outlined example" data-controller="action-button">
+              <button type="button" class="btn btn-action-card-1" data-action="click->action-button#disable" data-action-button-target="water" style="height: 4.4rem; width: 4.4rem; display: flex"> <%= image_tag('WaterCan.png', class: "btn-action-img") %></button>
+              <button type="button" class="btn btn-action-card-2" data-action="click->action-button#disable" data-action-button-target="trim" style="height: 4.4rem; width: 4.4rem; display: flex"> <%= image_tag('trimmer.png', class: "btn-action-img") %></button>
+              <button type="button" class="btn btn-action-card-3" data-action="click->action-button#disable" data-action-button-target="soil" style="height: 4.4rem; width: 4.4rem; display: flex"> <%= image_tag('soil_1.png', class: "btn-action-img") %></button>
             </div>
           </div>
         </div>
