@@ -1,5 +1,4 @@
 // Import and register all your controllers from the importmap under controllers/*
-
 import { application } from "controllers/application";
 import ActionButtonsController from "./action_buttons_controller";
 Stimulus.register("disable-button", ActionButtonsController)
