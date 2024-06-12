@@ -3,20 +3,22 @@ class LocationsController < ApplicationController
 
   def recentlocations
     @status = Location.joins(:plants)
+                      .where(user: current_user) # Ensure we only get the current user's locations
+                      .where(plants: { state: ["needs caring"] })
                       .group('locations.id')
-                      .where(plants: { state: ["need caring"] })
                       .limit(6)
     @recent = Location.joins(:plants)
+                      .where(user: current_user)
                       .select('locations.*, MAX(plants.updated_at) as last_plant_update')
                       .group('locations.id')
                       .order('last_plant_update DESC')
                       .limit(4)
-    @locations = Location.all
+    @locations = Location.where(user: current_user)
     @plants = Plant.all
   end
 
   def index
-    @locations = Location.all
+    @locations = Location.where(user: current_user)
   end
 
   def show

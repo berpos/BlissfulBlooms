@@ -1,7 +1,7 @@
 class PlantsController < ApplicationController
   before_action :set_location, only: %i[new create]
   def index
-    @plants = Plant.all
+    @plants = current_user.plants
     @plants.each(&:check_state)
   end
 
