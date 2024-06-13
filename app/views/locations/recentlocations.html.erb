@@ -26,24 +26,35 @@
 
 
 <div class="recents-container">
-  <% @recent.each do |location| %>
-    <div class="recent-container">
+  <% if @locations.empty? %>
+    <div class="recent-container mx-auto">
       <div class="container-info">
-        <% if location.photo.attached? %>
-          <div class="placeholder" style="background-image: url('<%= cl_image_path location.photo.key, height: 300, gravity: "auto", crop: :fill %>'); opacity: 1">
-          </div>
-        <% else %>
-          <div class="placeholder2">
-          </div>
-        <% end %>
-        <div style="margin-left: 1rem; margin-top: 0.5rem;">
-          <h4 class="location-name"><%= location.name.capitalize %></h4>
-          <p><%= location.plants.count %> plants🪴<p>
-        </div>
-        <div class="text-center" style="margin-top: 3rem;">
-          <%= link_to "Go", location_path(location), class: "btn-normal" %>
+        <%= image_tag('logoreccent.png', class: 'logo-recent') %>
+        <div class="text-center mt-2" style="color: #56AB2F">
+          <strong><%= "Look up ;)" %></strong>
         </div>
       </div>
     </div>
+  <% else %>
+    <% @recent.each do |location| %>
+      <div class="recent-container">
+        <div class="container-info">
+          <% if location.photo.attached? %>
+            <div class="placeholder" style="background-image: url('<%= cl_image_path location.photo.key, height: 300, gravity: "auto", crop: :fill %>'); opacity: 1">
+            </div>
+          <% else %>
+            <div class="placeholder2">
+            </div>
+          <% end %>
+          <div style="margin-left: 1rem; margin-top: 0.5rem;">
+            <h4 class="location-name"><%= location.name.capitalize %></h4>
+            <p><%= location.plants.count %> plants🪴<p>
+          </div>
+          <div class="text-center" style="margin-top: 3rem;">
+            <%= link_to "Go", location_path(location), class: "btn-normal" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
