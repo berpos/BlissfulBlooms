@@ -3,6 +3,9 @@ class PlantsController < ApplicationController
   def index
     @plants = current_user.plants
     @plants.each(&:check_state)
+    @status = current_user.plants
+                          .where(state: "needs caring")
+                          .limit(6)
   end
 
   def new
