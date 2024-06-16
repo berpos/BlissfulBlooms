@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<div class="new-plant-container position-absolute top-0 end-50" ><%#TODO: change class name%>
+<div class="new-plant-container position-fixed mx-auto top-0" ><%#TODO: change class name%>
   <div class="form-creation-plant" data-controller="categories-select">
     <%= simple_form_for [@location, @plant], url: location_plants_path do |f| %>
       <%= f.input :name %>
@@ -32,6 +32,6 @@
       <% end %>
       <%= f.submit "Create", class: "btn btn-primary-log" %>
     <% end %>
-    <%= link_to "Cancel", location_path(@location.id), class: "cancel-btn d-flex justify-content-center mt-3" %>
+    <%= link_to "Cancel", location_path(@location.id), class: "cancel-btn d-flex justify-content-center mt-3 mx-auto" %>
   </div>
 </div>
