@@ -12,26 +12,28 @@
   </div>
 </div>
 
-<div class="new-plant-container position-fixed mx-auto top-0" ><%#TODO: change class name%>
-  <div class="form-creation-plant" data-controller="categories-select">
-    <%= simple_form_for [@location, @plant], url: location_plants_path do |f| %>
-      <%= f.input :name %>
-        <div class="images d-flex-even mb-3">
-          <div class="p-image">
-            <%= image_tag "person-2.png",id: "image1", height: 68, width: 72, data: { action: "click->categories-select#select", categories_select_target: "image1"} %>
+<div class="container-carousel">
+  <div class="new-plant-container position-fixed mx-auto top-0" ><%#TODO: change class name%>
+    <div class="form-creation-plant" data-controller="categories-select">
+      <%= simple_form_for [@location, @plant], url: location_plants_path do |f| %>
+        <%= f.input :name %>
+          <div class="images d-flex-even mb-3">
+            <div class="p-image">
+              <%= image_tag "person-2.png",id: "image1", height: 68, width: 72, data: { action: "click->categories-select#select", categories_select_target: "image1"} %>
+            </div>
+            <div class="p-image">
+              <%= image_tag "moment-2.png",id: "image2", height: 68, width: 72, data: { action: "click->categories-select#select", categories_select_target: "image2"} %>
+            </div>
           </div>
-          <div class="p-image">
-            <%= image_tag "moment-2.png",id: "image2", height: 68, width: 72, data: { action: "click->categories-select#select", categories_select_target: "image2"} %>
-          </div>
+        <div class="radio-buttons-inline d-none">
+          <%= f.input :categories, collection: [['Person', 'person'], ['Moment', 'moment']], as: :radio_buttons %>
         </div>
-      <div class="radio-buttons-inline d-none">
-        <%= f.input :categories, collection: [['Person', 'person'], ['Moment', 'moment']], as: :radio_buttons %>
-      </div>
-      <%= f.simple_fields_for @log do |m| %>
-        <%= m.input :content, label: "Journal", input_html: { class: 'textarea-height' } %>
+        <%= f.simple_fields_for @log do |m| %>
+          <%= m.input :content, label: "Journal", input_html: { class: 'textarea-height' } %>
+        <% end %>
+        <%= f.submit "Create", class: "btn btn-primary-log" %>
       <% end %>
-      <%= f.submit "Create", class: "btn btn-primary-log" %>
-    <% end %>
-    <%= link_to "Cancel", location_path(@location.id), class: "cancel-btn d-flex justify-content-center mt-3 mx-auto" %>
+      <%= link_to "Cancel", location_path(@location.id), class: "cancel-btn d-flex justify-content-center mt-3 mx-auto" %>
+    </div>
   </div>
 </div>
