@@ -1,5 +1,7 @@
-[DemoDay presentation](https://youtu.be/FSshZDC3Mo4?si=cX1PwOx-0JOfQI6D&t=2839)
-[BlissfulBlooms](https://www.blissfulblooms.xyz/).   
+[DemoDay presentation](https://youtu.be/FSshZDC3Mo4?si=cX1PwOx-0JOfQI6D&t=2839)  
+
+
+[BlissfulBlooms](https://www.blissfulblooms.xyz/)       
 
 Website made to be seen in phone screens sizes.  
 A user starts with a empty digital garden plot. They can plant a seed that represents either someone or something they are grateful for.   
